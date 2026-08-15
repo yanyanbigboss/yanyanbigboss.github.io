@@ -25,8 +25,8 @@
       radial-gradient(circle at 50% -10%,rgba(99,102,241,.16),transparent 32%),
       radial-gradient(circle at 0% 45%,rgba(14,165,233,.08),transparent 26%),
       radial-gradient(circle at 100% 80%,rgba(168,85,247,.08),transparent 25%),#070a10}
-    .grid-bg{position:absolute;inset:0;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black 0%,transparent 74%)}
-    .orb{position:absolute;border-radius:999px;filter:blur(70px);opacity:.2;animation:float 10s ease-in-out infinite}
+    .grid-bg{position:absolute;inset:0;opacity:.78;background-image:linear-gradient(rgba(148,163,184,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.055) 1px,transparent 1px),linear-gradient(rgba(99,102,241,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(14,165,233,.018) 1px,transparent 1px);background-size:32px 32px,32px 32px,160px 160px,160px 160px;mask-image:radial-gradient(ellipse at 50% 18%,black 0%,rgba(0,0,0,.92) 38%,rgba(0,0,0,.52) 68%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse at 50% 18%,black 0%,rgba(0,0,0,.92) 38%,rgba(0,0,0,.52) 68%,transparent 100%)}
+    .grid-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(99,102,241,.08),transparent 40%),linear-gradient(to bottom,transparent 0%,rgba(2,6,23,.12) 75%,rgba(2,6,23,.46) 100%);pointer-events:none}.orb{position:absolute;border-radius:999px;filter:blur(70px);opacity:.2;animation:float 10s ease-in-out infinite}
     .orb.a{width:260px;height:260px;background:#4f46e5;left:-90px;top:90px}.orb.b{width:240px;height:240px;background:#0ea5e9;right:-100px;top:360px;animation-delay:-3s}.orb.c{width:220px;height:220px;background:#a855f7;left:50%;bottom:-90px;animation-delay:-6s}
     @keyframes float{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-18px,0)}}
     .shell{width:100%;max-width:720px;margin:0 auto;padding:18px max(13px,env(safe-area-inset-left)) calc(34px + env(safe-area-inset-bottom)) max(13px,env(safe-area-inset-right))}
@@ -80,6 +80,7 @@
     .float-chat span{position:absolute;right:42px;white-space:nowrap;padding:8px 10px;border-radius:10px;background:rgba(15,23,42,.88);border:1px solid rgba(255,255,255,.08);color:#cbd5e1;font-size:10px;font-weight:700;opacity:0;transform:translateX(8px);pointer-events:none;transition:.2s}.float-chat:hover span{opacity:1;transform:none}
     .scroll-cue{position:fixed;bottom:max(16px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:35;opacity:.65;transition:opacity .3s}.scroll-cue.hide{opacity:0}.scroll-cue div{display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:rgba(15,23,42,.72);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px)}
     @media (max-width:520px){
+      .grid-bg{background-size:28px 28px,28px 28px,140px 140px,140px 140px;opacity:.7}
       .shell{padding-top:12px;padding-bottom:calc(28px + env(safe-area-inset-bottom))}
       .hero{padding:20px 16px 19px;border-radius:23px}
       .brand-pill{max-width:100%;white-space:normal;line-height:1.35}
@@ -158,7 +159,7 @@
     <a href="https://m.me/111917871817015?ref=outline_100gb" class="product glass accent-teal block">
       <div class="product-top"><div class="product-name"><span class="icon-wrap text-teal-300"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22V2Z" fill="currentColor"/><path d="M12 4V2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22V20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4Z" fill="currentColor"/></svg></span><span class="ios-fix">Outline VPN</span></div><span class="tag tag-teal">HIGH SPEED</span></div>
       <ul class="feature-list mm-font"><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>One Click Connect</li><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>iOS / Android / PC အကုန်ရ</li><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Data လက်ကျန် ကိုယ်တိုင်စစ်နိုင်</li><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Device (လုံးဝ) အကန့်အသတ်မရှိ</li></ul>
-      <div class="bottom-row"><div class="price">10,000Ks<small>120 GB / Month</small></div><span class="buy buy-teal">ဝယ်ယူရန် <span>→</span></span></div>
+      <div class="bottom-row"><div class="price">10,000Ks<small>100 GB / Month</small></div><span class="buy buy-teal">ဝယ်ယူရန် <span>→</span></span></div>
     </a>
 
     <div class="section-head"><div><div class="section-kicker">Why Premium IT</div><h2 class="section-title">Simple. Fast. Reliable.</h2></div></div>
