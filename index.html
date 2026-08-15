@@ -1,281 +1,205 @@
 <!DOCTYPE html>
 <html lang="my">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium IT - Price List</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Fonts */
-        body { font-family: 'Inter', sans-serif; }
-        
-        /* Myanmar Font */
-        .mm-font { 
-            font-family: 'Noto Sans Myanmar', sans-serif; 
-            font-weight: 500; 
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#070a10">
+  <meta name="description" content="Premium IT - Digital Subscription Services">
+  <title>Premium IT — Digital Subscriptions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{color-scheme:dark}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; min-height:100dvh; overflow-x:hidden;
+      font-family:'Inter','Noto Sans Myanmar',sans-serif;
+      background:#070a10; color:#f8fafc;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+      -webkit-tap-highlight-color:transparent; -webkit-user-select:none; user-select:none;
+    }
+    a{text-decoration:none}
+    .mm-font{font-family:'Noto Sans Myanmar',sans-serif}
+    .page-bg{position:fixed;inset:0;z-index:-20;overflow:hidden;background:
+      radial-gradient(circle at 50% -10%,rgba(99,102,241,.16),transparent 32%),
+      radial-gradient(circle at 0% 45%,rgba(14,165,233,.08),transparent 26%),
+      radial-gradient(circle at 100% 80%,rgba(168,85,247,.08),transparent 25%),#070a10}
+    .grid-bg{position:absolute;inset:0;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black 0%,transparent 74%)}
+    .orb{position:absolute;border-radius:999px;filter:blur(70px);opacity:.2;animation:float 10s ease-in-out infinite}
+    .orb.a{width:260px;height:260px;background:#4f46e5;left:-90px;top:90px}.orb.b{width:240px;height:240px;background:#0ea5e9;right:-100px;top:360px;animation-delay:-3s}.orb.c{width:220px;height:220px;background:#a855f7;left:50%;bottom:-90px;animation-delay:-6s}
+    @keyframes float{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-18px,0)}}
+    .shell{width:100%;max-width:720px;margin:0 auto;padding:18px max(13px,env(safe-area-inset-left)) calc(34px + env(safe-area-inset-bottom)) max(13px,env(safe-area-inset-right))}
+    .glass{background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.045));border:1px solid rgba(255,255,255,.10);box-shadow:0 22px 70px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+    .hero{position:relative;padding:26px 22px 24px;border-radius:28px;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:-1px;background:linear-gradient(135deg,rgba(129,140,248,.18),transparent 35%,rgba(255,255,255,.04) 70%,rgba(14,165,233,.08));pointer-events:none}
+    .brand-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);border-radius:999px;color:#cbd5e1;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+    .brand-dot{width:7px;height:7px;border-radius:99px;background:#a5b4fc;box-shadow:0 0 16px rgba(165,180,252,.9)}
+    .hero-title{font-size:clamp(2.35rem,10vw,4.2rem);line-height:.98;letter-spacing:-.05em;margin:18px 0 8px;font-weight:800}
+    .hero-gradient{background:linear-gradient(90deg,#fff 0%,#dbeafe 48%,#a5b4fc 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-copy{max-width:560px;color:#94a3b8;font-size:14px;line-height:1.75}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
+    .meta-chip{display:inline-flex;align-items:center;gap:7px;padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);color:#cbd5e1;font-size:11px;font-weight:600}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:30px 2px 12px}
+    .section-kicker{color:#64748b;font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+    .section-title{margin:4px 0 0;font-size:22px;line-height:1.2;font-weight:800;letter-spacing:-.03em}
+    .product{display:block;width:100%;position:relative;border-radius:24px;padding:18px;margin-bottom:14px;overflow:hidden;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+    .product:hover{transform:translateY(-4px);box-shadow:0 30px 80px rgba(0,0,0,.33)}
+    .product:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,rgba(255,255,255,.035),transparent 35%)}
 
-        /* Scroll Smooth Fix */
-        html {
-            scroll-behavior: smooth;
-            height: 100%;
-        }
-
-        body {
-            min-height: 100%;
-            -webkit-overflow-scrolling: touch; 
-            overflow-x: hidden;
-            overflow-y: auto;
-            
-            /* Text Selection Disabled */
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-        /* ... existing styles ... */
-
-        /* iOS Specific Fix (iOS ဖြစ်မှသာ အလုပ်လုပ်မည်) */
-        @supports (-webkit-touch-callout: none) {
-            .ios-fix {
-                top: 3px !important; /* Android မှာ 1px ဖြစ်နေပေမယ့် iOS မှာ 3px ဖြစ်သွားပါမယ် */
-            }
-            .ios-badge-fix {
-                padding-top: 8px !important;    /* အပေါ်ကို ပိုကန်ချ */
-                padding-bottom: 4px !important; /* အောက်ကို လျှော့ */
-                display: inline-flex !important; 
-                align-items: center !important;
-            }
-        }
-    </style>
+    .shine-card{position:relative;isolation:isolate}
+    .shine-card:before{content:"";position:absolute;top:-45%;left:-70%;width:42%;height:190%;z-index:3;pointer-events:none;
+      background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.05) 38%,rgba(255,255,255,.45) 50%,rgba(255,255,255,.07) 62%,transparent 100%);
+      transform:rotate(16deg);filter:blur(1px);animation:cardShine 4.8s ease-in-out infinite}
+    .shine-card > *{position:relative;z-index:2}
+    @keyframes cardShine{0%,58%{left:-70%;opacity:0}66%{opacity:1}82%{left:130%;opacity:1}88%,100%{left:130%;opacity:0}}
+    @media (prefers-reduced-motion:reduce){.shine-card:before{animation:none}}
+    .hero.shine-card:before{top:-70%;height:235%;width:32%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.04) 35%,rgba(255,255,255,.32) 50%,rgba(191,219,254,.12) 60%,transparent 100%);filter:blur(1.5px);animation-duration:5.8s}
+    .accent-green{border-color:rgba(34,197,94,.18);box-shadow:0 20px 60px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.05)}
+    .accent-red{border-color:rgba(239,68,68,.18);box-shadow:0 20px 60px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.05)}
+    .accent-teal{border-color:rgba(45,212,191,.18);box-shadow:0 20px 60px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.05)}
+    .product-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .product-name{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;letter-spacing:-.02em}
+    .icon-wrap{display:grid;place-items:center;width:38px;height:38px;border-radius:13px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08)}
+    .tag{padding:7px 9px;border-radius:999px;font-size:9px;font-weight:800;letter-spacing:.03em;white-space:nowrap}
+    .tag-green{background:rgba(34,197,94,.13);color:#86efac;border:1px solid rgba(34,197,94,.17)}
+    .tag-red{background:rgba(239,68,68,.13);color:#fca5a5;border:1px solid rgba(239,68,68,.17)}
+    .tag-teal{background:rgba(45,212,191,.13);color:#99f6e4;border:1px solid rgba(45,212,191,.17)}
+    .feature-list{margin:15px 0 18px;padding:0;list-style:none;display:grid;gap:9px;color:#cbd5e1;font-size:13px}
+    .feature-list li{display:flex;align-items:flex-start;gap:9px;line-height:1.55}.check{width:17px;height:17px;flex:0 0 17px;margin-top:1px}
+    .bottom-row{display:flex;align-items:end;justify-content:space-between;gap:14px;padding-top:15px;border-top:1px solid rgba(255,255,255,.08)}
+    .price{font-size:26px;font-weight:800;letter-spacing:-.04em;line-height:1}.price small{display:block;margin-top:7px;color:#64748b;font-size:10px;font-weight:600;letter-spacing:.02em}
+    .buy{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:124px;padding:11px 15px;border-radius:13px;color:white;font-size:12px;font-weight:800;box-shadow:0 12px 30px rgba(0,0,0,.25);transition:transform .16s ease,filter .16s ease}
+    .buy:hover{filter:brightness(1.08)}.buy:active{transform:scale(.98)}
+    .buy-green{background:linear-gradient(135deg,#16a34a,#22c55e)}.buy-red{background:linear-gradient(135deg,#dc2626,#ef4444)}.buy-teal{background:linear-gradient(135deg,#0f766e,#14b8a6)}
+    .trust{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.trust-card{padding:14px;border-radius:18px}.trust-icon{font-size:18px}.trust-title{margin-top:8px;font-size:12px;font-weight:800}.trust-copy{margin-top:4px;color:#64748b;font-size:10px;line-height:1.6}
+    .steps{display:grid;gap:10px}.step{display:flex;gap:12px;align-items:flex-start;padding:14px 15px;border-radius:18px}.step-num{display:grid;place-items:center;width:28px;height:28px;flex:0 0 28px;border-radius:10px;background:rgba(165,180,252,.11);border:1px solid rgba(165,180,252,.14);color:#c7d2fe;font-size:11px;font-weight:800}.step-title{font-size:12px;font-weight:800}.step-copy{margin-top:4px;color:#64748b;font-size:10px;line-height:1.6}
+    .faq details{border-radius:16px;padding:14px 15px;margin-bottom:8px}.faq summary{cursor:pointer;list-style:none;font-size:12px;font-weight:700}.faq summary::-webkit-details-marker{display:none}.faq p{margin:9px 0 0;color:#64748b;font-size:11px;line-height:1.7}
+    .footer{padding:28px 6px 8px;text-align:center;color:#475569;font-size:10px;line-height:1.7}
+    .float-chat{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:40;width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 18px 45px rgba(76,29,149,.4),inset 0 1px 0 rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.14)}
+    .float-chat span{position:absolute;right:42px;white-space:nowrap;padding:8px 10px;border-radius:10px;background:rgba(15,23,42,.88);border:1px solid rgba(255,255,255,.08);color:#cbd5e1;font-size:10px;font-weight:700;opacity:0;transform:translateX(8px);pointer-events:none;transition:.2s}.float-chat:hover span{opacity:1;transform:none}
+    .scroll-cue{position:fixed;bottom:max(16px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:35;opacity:.65;transition:opacity .3s}.scroll-cue.hide{opacity:0}.scroll-cue div{display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:rgba(15,23,42,.72);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px)}
+    @media (max-width:520px){
+      .shell{padding-top:12px;padding-bottom:calc(28px + env(safe-area-inset-bottom))}
+      .hero{padding:20px 16px 19px;border-radius:23px}
+      .brand-pill{max-width:100%;white-space:normal;line-height:1.35}
+      .hero-title{font-size:clamp(2.15rem,12vw,3.15rem);margin-top:15px}
+      .hero-copy{font-size:13px;line-height:1.8}
+      .hero-meta{gap:6px}
+      .meta-chip{font-size:10px;padding:7px 9px}
+      .section-head{margin-top:24px}
+      .product{padding:15px;border-radius:21px;margin-bottom:11px}
+      .product-top{align-items:flex-start}
+      .product-name{font-size:17px;min-width:0}
+      .product-name .icon-wrap{width:35px;height:35px;flex-basis:35px}
+      .tag{padding:6px 8px;font-size:8px;letter-spacing:.02em}
+      .feature-list{font-size:12px;gap:8px;margin:14px 0 16px}
+      .bottom-row{align-items:center;gap:10px}
+      .price{font-size:23px}
+      .price small{font-size:9px;margin-top:6px}
+      .buy{min-width:108px;padding:10px 13px;font-size:11px}
+      .trust{gap:8px}
+      .trust-card{padding:12px;border-radius:16px}
+      .float-chat span{display:none}
+    }
+    @media (max-width:360px){
+      .hero{padding-inline:14px}
+      .product{padding:13px}
+      .product-top{gap:7px}
+      .product-name{font-size:16px;gap:7px}
+      .tag{font-size:7.5px;padding:5px 7px}
+      .feature-list{font-size:11.5px}
+      .bottom-row{gap:8px}
+      .price{font-size:21px}
+      .buy{min-width:100px;padding-inline:11px}
+    }
+    @media (min-width:680px){.trust{grid-template-columns:repeat(4,minmax(0,1fr))}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @supports (-webkit-touch-callout:none){.ios-fix{top:2px!important}}
+  </style>
 </head>
+<body>
+  <div class="page-bg"><div class="grid-bg"></div><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
 
-<body class="bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-indigo-50 via-slate-50 to-blue-50 bg-fixed text-slate-900 min-h-screen flex flex-col items-center py-6 px-4 pb-6">
+  <main class="shell">
+    <section class="hero glass shine-card">
+      <span class="brand-pill"><span class="brand-dot"></span> Premium IT • Digital Services</span>
+      <h1 class="hero-title">Premium <span class="hero-gradient">IT</span></h1>
+      <p class="hero-copy mm-font">သင်နေ့တိုင်းသုံးတဲ့ Digital Services တွေကို ပိုလွယ်ကူ၊ ပိုမြန်ပြီး ယုံကြည်စိတ်ချစွာ ရယူနိုင်အောင် တစ်နေရာတည်းမှာ စုစည်းပေးထားပါတယ်။</p>
+      <div class="hero-meta">
+        <span class="meta-chip">⚡ Fast Delivery</span>
+        <span class="meta-chip">💬 Messenger Support</span>
+        <span class="meta-chip">🔒 Reliable Service</span>
+      </div>
+    </section>
 
-    <div class="w-full max-w-sm mb-10 text-left pl-1">
-        <h1 class="text-5xl font-bold text-slate-900 tracking-tight mb-2 drop-shadow-sm">
-            Premium IT
-        </h1>
-        
-        <p class="text-slate-500 text-xs font-bold tracking-[0.2em] uppercase">
-            PREMIUM SUBSCRIPTIONS
-        </p>
-        
-        <p class="text-slate-600 text-lg font-bold mt-2 tracking-wider flex items-center">
-            <svg class="w-5 h-5 mr-2 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            09 792 664 668
-        </p>
+    <div class="section-head">
+      <div><div class="section-kicker">Available Plans</div><h2 class="section-title">Choose your service</h2></div>
+      <div class="section-kicker">2026</div>
     </div>
 
-    <div class="bg-white/70 backdrop-blur-xl border border-white/60 rounded-xl p-6 w-full max-w-sm mb-6 shadow-2xl shadow-slate-200/60 hover:border-green-500 active:border-green-500 transition duration-300 transform hover:-translate-y-1 active:-translate-y-1">
-        <div class="flex justify-between items-center mb-4">
-            <h2 class="text-xl font-bold text-green-600 flex items-center">
-                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.24z"/></svg>
-                <span class="leading-none relative top-[1px] ios-fix">Spotify</span>
-            </h2>
-            <span class="bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs px-3 py-1.5 rounded-full font-bold shadow-md shadow-green-200 ios-badge-fix">Best Seller</span>
-        </div>
-        <ul class="mm-font text-slate-600 text-sm mb-6 space-y-2 font-medium">
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">Official Individual Plan</span>
-            </li>
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">VPN မလို (Direct Play)</span>
-            </li>
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">Download & Listen Offline</span>
-            </li>
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">Upgrade Your Own Account</span>
-            </li>
-        </ul>
-        <div class="flex justify-between items-center pt-4 border-t border-slate-200/60">
-            <div class="flex flex-col">
-                <span class="text-2xl font-bold text-slate-900">16,000Ks</span>
-                <span class="text-xs text-slate-500">per month</span>
-            </div>
-            <a href="https://m.me/111917871817015?ref=spotify" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg text-sm font-semibold shadow-lg hover:shadow-green-500/50 transition">
-                ဝယ်ယူရန်
-            </a>
-        </div>
-    </div>
+    <a href="https://m.me/111917871817015?ref=spotify" class="product glass accent-green block">
+      <div class="product-top"><div class="product-name"><span class="icon-wrap text-green-400"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.24z"/></svg></span><span class="ios-fix">Spotify</span></div><span class="tag tag-green">BEST SELLER</span></div>
+      <ul class="feature-list mm-font"><li><svg class="check text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Official Individual Plan</li><li><svg class="check text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>VPN မလို (Direct Play)</li><li><svg class="check text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Download & Listen Offline</li><li><svg class="check text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Upgrade Your Own Account</li></ul>
+      <div class="bottom-row"><div class="price">16,000Ks<small>per month</small></div><span class="buy buy-green">ဝယ်ယူရန် <span>→</span></span></div>
+    </a>
 
-    <div class="bg-white/70 backdrop-blur-xl border border-white/60 rounded-xl p-6 w-full max-w-sm mb-6 shadow-2xl shadow-slate-200/60 hover:border-red-600 active:border-red-600 transition duration-300 transform hover:-translate-y-1 active:-translate-y-1">
-        <div class="flex justify-between items-center mb-4">
-            <h2 class="text-xl font-bold text-red-600 flex items-center">
-                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M16.596 0H21v24h-4.404L8.356 7.647V24H3.952V0h4.452l8.192 16.29V0z"/></svg>
-                <span class="leading-none relative top-[1px] ios-fix">Netflix</span>
-            </h2>
-            <span class="bg-gradient-to-r from-red-500 to-rose-600 text-white text-xs px-3 py-1.5 rounded-full font-bold shadow-md shadow-red-200 ios-badge-fix">Premium Plan</span>
-        </div>
-        <ul class="mm-font text-slate-600 text-sm mb-6 space-y-2 font-medium">
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">4K Ultra HD ရုပ်ထွက်</span>
-            </li>
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">Download ဆွဲပြီး Offline ကြည့်</span>
-            </li>
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">အကောင့် (လုံးဝ) ပြောင်းစရာမလို</span>
-            </li>
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">PC / Phone / Tablet ကြိုက်ရာသုံး</span>
-            </li>
-        </ul>
-        <div class="flex justify-between items-center pt-4 border-t border-slate-200/60">
-            <div class="flex flex-col">
-                <span class="text-2xl font-bold text-slate-900">15,000Ks</span>
-                <span class="text-xs text-slate-500">per month</span>
-            </div>
-            <a href="https://m.me/111917871817015?ref=netflix" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg text-sm font-semibold shadow-lg hover:shadow-red-600/50 transition">
-                ဝယ်ယူရန်
-            </a>
-        </div>
-    </div>
+    <a href="https://m.me/111917871817015?ref=netflix" class="product glass accent-red block">
+      <div class="product-top"><div class="product-name"><span class="icon-wrap text-red-400"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.596 0H21v24h-4.404L8.356 7.647V24H3.952V0h4.452l8.192 16.29V0z"/></svg></span><span class="ios-fix">Netflix</span></div><span class="tag tag-red">PREMIUM PLAN</span></div>
+      <ul class="feature-list mm-font"><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>4K Ultra HD ရုပ်ထွက်</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Download ဆွဲပြီး Offline ကြည့်</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>အကောင့် (လုံးဝ) ပြောင်းစရာမလို</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>PC / Phone / Tablet ကြိုက်ရာသုံး</li></ul>
+      <div class="bottom-row"><div class="price">15,000Ks<small>per month</small></div><span class="buy buy-red">ဝယ်ယူရန် <span>→</span></span></div>
+    </a>
 
-    <div class="bg-white/70 backdrop-blur-xl border border-white/60 rounded-xl p-6 w-full max-w-sm mb-6 shadow-2xl shadow-slate-200/60 hover:border-red-600 active:border-red-600 transition duration-300 transform hover:-translate-y-1 active:-translate-y-1">
-        <div class="flex justify-between items-center mb-4">
-            <h2 class="text-xl font-bold text-slate-900 flex items-center">
-                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                <span class="leading-none relative top-[1px] ios-fix">YouTube</span>
-            </h2>
-            <span class="bg-gradient-to-r from-red-500 to-rose-600 text-white text-xs px-3 py-1.5 rounded-full font-bold shadow-md shadow-red-200 ios-badge-fix">Premium</span>
-        </div>
-        <ul class="mm-font text-slate-600 text-sm mb-6 space-y-2 font-medium">
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">Background Play ရ</span>
-            </li>
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">ကြော်ငြာ (လုံးဝ) မတက်</span>
-            </li>
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">Mail တစ်ခုဖြင့် အမြဲသုံးနိုင်</span>
-            </li>
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">YouTube Music ပါ Free ရ</span>
-            </li>
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">Download & Listen Offline</span>
-            </li>
-        </ul>
-        <div class="flex justify-between items-center pt-4 border-t border-slate-200/60">
-            <div class="flex flex-col">
-                <span class="text-2xl font-bold text-slate-900">19,000Ks</span>
-                <span class="text-xs text-slate-500">2 Months Plan</span>
-            </div>
-            <a href="https://m.me/111917871817015?ref=youtube" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg text-sm font-semibold shadow-lg hover:shadow-red-600/50 transition">
-                ဝယ်ယူရန်
-            </a>
-        </div>
-    </div>
+    <a href="https://m.me/111917871817015?ref=youtube" class="product glass accent-red block">
+      <div class="product-top"><div class="product-name"><span class="icon-wrap text-red-400"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></span><span class="ios-fix">YouTube</span></div><span class="tag tag-red">PREMIUM</span></div>
+      <ul class="feature-list mm-font"><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Background Play ရ</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>ကြော်ငြာ (လုံးဝ) မတက်</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Mail တစ်ခုဖြင့် အမြဲသုံးနိုင်</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>YouTube Music ပါ Free ရ</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Download & Listen Offline</li></ul>
+      <div class="bottom-row"><div class="price">17,000Ks<small>2 Months Plan</small></div><span class="buy buy-red">ဝယ်ယူရန် <span>→</span></span></div>
+    </a>
 
-    <div class="bg-white/70 backdrop-blur-xl border border-white/60 rounded-xl p-6 w-full max-w-sm mb-6 shadow-2xl shadow-slate-200/60 hover:border-[#164E47] active:border-[#164E47] transition duration-300 transform hover:-translate-y-1 active:-translate-y-1">
-        <div class="flex justify-between items-center mb-4">
-            <h2 class="text-xl font-bold text-[#164E47] flex items-center">
-                <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22V2Z" fill="#164E47"/>
-                    <path d="M12 4V2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22V20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4Z" fill="#164E47"/>
-                </svg>
-                <span class="leading-none relative top-[1px] ios-fix">Outline VPN</span>
-            </h2>
-            <span class="bg-[#164E47] text-white text-xs px-3 py-1.5 rounded-full font-bold shadow-md shadow-teal-200 ios-badge-fix">High Speed</span>
-        </div>
+    <a href="https://m.me/111917871817015?ref=outline_100gb" class="product glass accent-teal block">
+      <div class="product-top"><div class="product-name"><span class="icon-wrap text-teal-300"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22V2Z" fill="currentColor"/><path d="M12 4V2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22V20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4Z" fill="currentColor"/></svg></span><span class="ios-fix">Outline VPN</span></div><span class="tag tag-teal">HIGH SPEED</span></div>
+      <ul class="feature-list mm-font"><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>One Click Connect</li><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>iOS / Android / PC အကုန်ရ</li><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Data လက်ကျန် ကိုယ်တိုင်စစ်နိုင်</li><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Device (လုံးဝ) အကန့်အသတ်မရှိ</li></ul>
+      <div class="bottom-row"><div class="price">10,000Ks<small>100 GB / Month</small></div><span class="buy buy-teal">ဝယ်ယူရန် <span>→</span></span></div>
+    </a>
 
-        <ul class="mm-font text-slate-600 text-sm mb-6 space-y-2 font-medium">
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-[#164E47] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">One Click Connect</span>
-            </li>
-            
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-[#164E47] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">iOS / Android / PC အကုန်ရ</span>
-            </li>
+    <div class="section-head"><div><div class="section-kicker">Why Premium IT</div><h2 class="section-title">Simple. Fast. Reliable.</h2></div></div>
+    <section class="trust">
+      <div class="trust-card glass"><div class="trust-icon">⚡</div><div class="trust-title">Fast Delivery</div><div class="trust-copy mm-font">Order တင်ပြီး အဆင်ပြေမြန်ဆန်စွာ ရယူနိုင်ပါသည်။</div></div>
+      <div class="trust-card glass"><div class="trust-icon">💬</div><div class="trust-title">Easy Support</div><div class="trust-copy mm-font">Messenger မှတစ်ဆင့် လိုအပ်တာ မေးမြန်းနိုင်ပါတယ်။</div></div>
+      <div class="trust-card glass"><div class="trust-icon">🔒</div><div class="trust-title">Reliable</div><div class="trust-copy mm-font">Service အချက်အလက်တွေကို ရှင်းလင်းစွာ ပြထားပါတယ်။</div></div>
+      <div class="trust-card glass"><div class="trust-icon">📱</div><div class="trust-title">Multi-Device</div><div class="trust-copy mm-font">သတ်မှတ်ထားတဲ့ service အလိုက် device မျိုးစုံအသုံးပြုနိုင်ပါတယ်။</div></div>
+    </section>
 
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-[#164E47] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">Data လက်ကျန် ကိုယ်တိုင်စစ်နိုင်</span>
-            </li>
+    <div class="section-head"><div><div class="section-kicker">How it works</div><h2 class="section-title">3 easy steps</h2></div></div>
+    <section class="steps">
+      <div class="step glass"><div class="step-num">01</div><div><div class="step-title">Choose your plan</div><div class="step-copy mm-font">လိုချင်တဲ့ service နဲ့ plan ကို ရွေးပါ။</div></div></div>
+      <div class="step glass"><div class="step-num">02</div><div><div class="step-title">Tap “ဝယ်ယူရန်”</div><div class="step-copy mm-font">Messenger order chat ကို တိုက်ရိုက်ဖွင့်ပါ။</div></div></div>
+      <div class="step glass"><div class="step-num">03</div><div><div class="step-title">Confirm your order</div><div class="step-copy mm-font">Order အချက်အလက်နဲ့ payment ကို ဆက်လက်စီစဉ်ပါ။</div></div></div>
+      <div class="step glass"><div class="step-num">04</div><div><div class="step-title">Enjoy your service</div><div class="step-copy mm-font">Service အလိုက် စတင်အသုံးပြုနိုင်ပါပြီ။</div></div></div>
+    </section>
 
-            <li class="flex items-center">
-                <svg class="w-5 h-5 text-[#164E47] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                <span class="mt-0.5">Device (လုံးဝ) အကန့်အသတ်မရှိ</span>
-            </li>
-        </ul>
+    <div class="section-head"><div><div class="section-kicker">FAQ</div><h2 class="section-title">Need to know</h2></div></div>
+    <section class="faq">
+      <details class="glass"><summary>ဘယ်လို order တင်ရမလဲ?</summary><p class="mm-font">သင်လိုချင်တဲ့ product ရဲ့ “ဝယ်ယူရန်” ကိုနှိပ်ပြီး Messenger မှတစ်ဆင့် order ဆက်လုပ်နိုင်ပါတယ်။</p></details>
+      <details class="glass"><summary>ငွေပေးချေပြီးရင် ဘယ်လိုရမလဲ?</summary><p class="mm-font">Order အချက်အလက်အတည်ပြုပြီး service အလိုက် အသုံးပြုနိုင်မယ့်အချက်အလက်တွေကို ပေးပို့ပေးပါမယ်။</p></details>
+      <details class="glass"><summary>ပြဿနာဖြစ်ရင် ဘယ်ကိုဆက်သွယ်ရမလဲ?</summary><p class="mm-font">Messenger မှတစ်ဆင့် Support ကို တိုက်ရိုက်ဆက်သွယ်နိုင်ပါတယ်။</p></details>
+    </section>
 
-        <div class="space-y-4 pt-4 border-t border-slate-200/60">
-            <div class="flex justify-between items-center">
-                <div class="flex flex-col">
-                    <span class="text-2xl font-bold text-slate-900">10,000Ks</span>
-                    <span class="text-xs text-slate-500 font-medium">120 GB / Month</span>
-                </div>
-                <a href="https://m.me/111917871817015?ref=outline_100gb" class="bg-[#164E47] hover:bg-[#113f39] text-white px-6 py-2 rounded-lg text-sm font-semibold shadow-lg hover:shadow-teal-500/50 transition">
-                    ဝယ်ယူရန်
-                </a>
-            </div>
-        </div>
-    </div>
+    <footer class="footer">Premium IT · Digital Service<br><span>© 2026 All Rights Reserved</span></footer>
+  </main>
 
-    <div class="mt-4 text-center text-slate-400 text-sm mb-2">
-        <p>Premium IT - Digital Service</p>
-        <p class="mt-1 text-xs opacity-50">© 2026 All Rights Reserved</p>
-    </div>
+  <a class="float-chat" href="https://m.me/111917871817015" aria-label="Chat on Messenger">
+    <span>Chat with us</span>
+    <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M12 21a9 9 0 1 0-4.1-1L3 21l1.1-4.2A9 9 0 0 0 12 21Z"/><path d="m8 14 2.4-3 2 1.6L16 9l-2.3 3  -2-1.6L8 14Z" fill="white" stroke="none"/></svg>
+  </a>
 
-    <div id="scroll-arrow" class="fixed bottom-8 inset-x-0 mx-auto w-fit z-50 animate-bounce pointer-events-none opacity-80 transition-opacity duration-500">
-        <div class="bg-white/50 p-2 rounded-full shadow-lg border border-white/60 backdrop-blur-md">
-            <svg class="w-6 h-6 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7"></path>
-            </svg>
-        </div>
-    </div>
+  <div id="scroll-cue" class="scroll-cue"><div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="m7 10 5 5 5-5"/></svg></div></div>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            const arrow = document.getElementById('scroll-arrow');
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 120) {
-                arrow.classList.remove('opacity-80');
-                arrow.classList.add('opacity-0');
-            } else {
-                arrow.classList.add('opacity-80');
-                arrow.classList.remove('opacity-0');
-            }
-        });
-    </script>
-    <script>
-        // Disable Right Click
-        document.addEventListener('contextmenu', (e) => e.preventDefault());
-
-        function ctrlShiftKey(e, keyCode) {
-            return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
-        }
-
-        document.onkeydown = (e) => {
-            // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
-            if (
-                event.keyCode === 123 ||
-                ctrlShiftKey(e, 'I') ||
-                ctrlShiftKey(e, 'J') ||
-                ctrlShiftKey(e, 'C') ||
-                (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0))
-            )
-                return false;
-        };
-    </script>
+  <script>
+    const cue=document.getElementById('scroll-cue');
+    window.addEventListener('scroll',()=>{const nearBottom=window.innerHeight+window.scrollY>=document.body.offsetHeight-160; cue.classList.toggle('hide',nearBottom);},{passive:true});
+    document.addEventListener('contextmenu',e=>e.preventDefault());
+    function ctrlShiftKey(e,key){return e.ctrlKey&&e.shiftKey&&e.key.toUpperCase()===key}
+    document.addEventListener('keydown',e=>{if(e.key==='F12'||ctrlShiftKey(e,'I')||ctrlShiftKey(e,'J')||ctrlShiftKey(e,'C')||(e.ctrlKey&&e.key.toUpperCase()==='U')) e.preventDefault();});
+  </script>
 </body>
 </html>
