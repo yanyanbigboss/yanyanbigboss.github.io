@@ -3,461 +3,612 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#070a10">
-  <meta name="description" content="Premium IT - Digital Subscription Services">
-  <title>Premium IT — Digital Subscriptions</title>
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="Premium IT — Spotify, Netflix, YouTube Premium နှင့် Outline VPN စျေးနှုန်းများ။">
+  <meta name="color-scheme" content="dark">
+  <title>Premium IT — Plans & Prices</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root{color-scheme:dark}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0; min-height:100dvh; overflow-x:hidden;
-      font-family:'Inter','Noto Sans Myanmar',sans-serif;
-      background:#070a10; color:#f8fafc;
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-      -webkit-tap-highlight-color:transparent; -webkit-user-select:none; user-select:none;
+    :root {
+      color-scheme: dark;
+      --bg: #090b12;
+      --surface: #12151f;
+      --surface-raised: #171b28;
+      --text: #f5f6fa;
+      --muted: #a1a7b9;
+      --line: rgba(194, 203, 236, .12);
+      --violet: #b6adff;
+      --font: 'Inter', 'Noto Sans Myanmar', system-ui, sans-serif;
     }
-    a{text-decoration:none}
-    .text-green-400{color:#4ade80}.text-red-400{color:#f87171}.text-teal-300{color:#5eead4}
-    .mm-font{font-family:'Noto Sans Myanmar',sans-serif}
-    .page-bg{position:fixed;inset:0;z-index:-20;overflow:hidden;background:
-      radial-gradient(circle at 50% -10%,rgba(99,102,241,.16),transparent 32%),
-      radial-gradient(circle at 0% 45%,rgba(14,165,233,.08),transparent 26%),
-      radial-gradient(circle at 100% 80%,rgba(168,85,247,.08),transparent 25%),#070a10}
-    .grid-bg{position:absolute;inset:0;opacity:.78;background-image:linear-gradient(rgba(148,163,184,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.055) 1px,transparent 1px),linear-gradient(rgba(99,102,241,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(14,165,233,.018) 1px,transparent 1px);background-size:32px 32px,32px 32px,160px 160px,160px 160px}
-}
-    .grid-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(99,102,241,.08),transparent 40%),linear-gradient(to bottom,transparent 0%,rgba(2,6,23,.12) 75%,rgba(2,6,23,.46) 100%);pointer-events:none}.orb{position:absolute;border-radius:999px;filter:blur(70px);opacity:.2;animation:float 10s ease-in-out infinite}
-    .orb.a{width:260px;height:260px;background:#4f46e5;left:-90px;top:90px}.orb.b{width:240px;height:240px;background:#0ea5e9;right:-100px;top:360px;animation-delay:-3s}.orb.c{width:220px;height:220px;background:#a855f7;left:50%;bottom:-90px;animation-delay:-6s}
-    @keyframes float{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-18px,0)}}
-    .shell{width:100%;max-width:720px;margin:0 auto;padding:18px max(13px,env(safe-area-inset-left)) calc(34px + env(safe-area-inset-bottom)) max(13px,env(safe-area-inset-right))}
-    .glass{background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.045));border:1px solid rgba(255,255,255,.10);box-shadow:0 22px 70px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
-    .hero{position:relative;padding:26px 22px 24px;border-radius:28px;overflow:hidden}
-    .hero:before{content:"";position:absolute;inset:-1px;background:linear-gradient(135deg,rgba(129,140,248,.18),transparent 35%,rgba(255,255,255,.04) 70%,rgba(14,165,233,.08));pointer-events:none}
-    .brand-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);border-radius:999px;color:#cbd5e1;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
-    .brand-dot{width:7px;height:7px;border-radius:99px;background:#a5b4fc;box-shadow:0 0 16px rgba(165,180,252,.9)}
-    .hero-title{font-size:clamp(2.35rem,10vw,4.2rem);line-height:.98;letter-spacing:-.05em;margin:18px 0 8px;font-weight:800}
-    .hero-gradient{background:linear-gradient(90deg,#fff 0%,#dbeafe 48%,#a5b4fc 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero-copy{max-width:560px;color:#94a3b8;font-size:14px;line-height:1.75}
-    .hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
-    .meta-chip{display:inline-flex;align-items:center;gap:7px;padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);color:#cbd5e1;font-size:11px;font-weight:600}
-    .section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:30px 2px 12px}
-    .section-kicker{color:#64748b;font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
-    .section-title{margin:4px 0 0;font-size:22px;line-height:1.2;font-weight:800;letter-spacing:-.03em}
-    .product{contain:layout paint;display:block;width:100%;position:relative;border-radius:24px;padding:18px;margin-bottom:14px;overflow:hidden;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
-    .product:hover{transform:translateY(-4px);box-shadow:0 30px 80px rgba(0,0,0,.33)}
-    .product:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,rgba(255,255,255,.035),transparent 35%)}
-
-    .shine-card{position:relative;isolation:isolate}
-    .shine-card:before{content:"";position:absolute;top:-45%;left:-70%;width:42%;height:190%;z-index:3;pointer-events:none;
-      background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.05) 38%,rgba(255,255,255,.45) 50%,rgba(255,255,255,.07) 62%,transparent 100%);
-      transform:rotate(16deg);filter:blur(1px);animation:cardShine 4.8s ease-in-out infinite}
-    .shine-card > *{position:relative;z-index:2}
-    @keyframes cardShine{0%,58%{left:-70%;opacity:0}66%{opacity:1}82%{left:130%;opacity:1}88%,100%{left:130%;opacity:0}}
-    @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
-    .hero.shine-card:before{top:-70%;height:235%;width:32%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.04) 35%,rgba(255,255,255,.32) 50%,rgba(191,219,254,.12) 60%,transparent 100%);filter:blur(1.5px);animation-duration:5.8s}
-    .accent-green{border-color:rgba(34,197,94,.18);box-shadow:0 20px 60px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.05)}
-    .accent-red{border-color:rgba(239,68,68,.18);box-shadow:0 20px 60px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.05)}
-    .accent-teal{border-color:rgba(45,212,191,.18);box-shadow:0 20px 60px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.05)}
-    .product-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
-    .product-name{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:800;letter-spacing:-.02em}
-    .icon-wrap{display:grid;place-items:center;width:38px;height:38px;border-radius:13px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.08)}
-    .tag{padding:7px 9px;border-radius:999px;font-size:9px;font-weight:800;letter-spacing:.03em;white-space:nowrap}
-    .tag-green{background:rgba(34,197,94,.13);color:#86efac;border:1px solid rgba(34,197,94,.17)}
-    .tag-red{background:rgba(239,68,68,.13);color:#fca5a5;border:1px solid rgba(239,68,68,.17)}
-    .tag-teal{background:rgba(45,212,191,.13);color:#99f6e4;border:1px solid rgba(45,212,191,.17)}
-    .feature-list{margin:15px 0 18px;padding:0;list-style:none;display:grid;gap:9px;color:#cbd5e1;font-size:13px}
-    .feature-list li{display:flex;align-items:flex-start;gap:9px;line-height:1.55}.check{width:17px;height:17px;flex:0 0 17px;margin-top:1px}
-    .bottom-row{display:flex;align-items:end;justify-content:space-between;gap:14px;padding-top:15px;border-top:1px solid rgba(255,255,255,.08)}
-    .price{font-size:26px;font-weight:800;letter-spacing:-.04em;line-height:1}.price small{display:block;margin-top:7px;color:#64748b;font-size:10px;font-weight:600;letter-spacing:.02em}
-    .buy{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-width:124px;padding:11px 15px;border-radius:13px;color:white;font-size:12px;font-weight:800;box-shadow:0 12px 30px rgba(0,0,0,.25);transition:transform .16s ease,filter .16s ease}
-    .buy:hover{filter:brightness(1.08)}.buy:active{transform:scale(.98)}
-    .buy-green{background:linear-gradient(135deg,#16a34a,#22c55e)}.buy-red{background:linear-gradient(135deg,#dc2626,#ef4444)}.buy-teal{background:linear-gradient(135deg,#0f766e,#14b8a6)}
-    .trust{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.trust-card{padding:14px;border-radius:18px}.trust-icon{font-size:18px}.trust-title{margin-top:8px;font-size:12px;font-weight:800}.trust-copy{margin-top:4px;color:#64748b;font-size:10px;line-height:1.6}
-    .steps{display:grid;gap:10px}.step{display:flex;gap:12px;align-items:flex-start;padding:14px 15px;border-radius:18px}.step-num{display:grid;place-items:center;width:28px;height:28px;flex:0 0 28px;border-radius:10px;background:rgba(165,180,252,.11);border:1px solid rgba(165,180,252,.14);color:#c7d2fe;font-size:11px;font-weight:800}.step-title{font-size:12px;font-weight:800}.step-copy{margin-top:4px;color:#64748b;font-size:10px;line-height:1.6}
-    .faq details{border-radius:16px;padding:14px 15px;margin-bottom:8px}.faq summary{cursor:pointer;list-style:none;font-size:12px;font-weight:700}.faq summary::-webkit-details-marker{display:none}.faq p{margin:9px 0 0;color:#64748b;font-size:11px;line-height:1.7}
-    .footer{padding:28px 6px 8px;text-align:center;color:#475569;font-size:10px;line-height:1.7}
-    .trust,.steps,.faq{content-visibility:auto;contain-intrinsic-size:420px}
-    .float-chat{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:40;width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 18px 45px rgba(76,29,149,.4),inset 0 1px 0 rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.14)}
-    .float-chat span{position:absolute;right:42px;white-space:nowrap;padding:8px 10px;border-radius:10px;background:rgba(15,23,42,.88);border:1px solid rgba(255,255,255,.08);color:#cbd5e1;font-size:10px;font-weight:700;opacity:0;transform:translateX(8px);pointer-events:none;transition:.2s}.float-chat:hover span{opacity:1;transform:none}
-    .scroll-cue{position:fixed;bottom:max(16px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:35;opacity:.65;transition:opacity .3s}.scroll-cue.hide{opacity:0}.scroll-cue div{display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:rgba(15,23,42,.72);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px)}
-    @media (max-width:520px){
-      .grid-bg{background-size:28px 28px,28px 28px,140px 140px,140px 140px;opacity:.7}
-      .glass{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-      .shell{padding-top:12px;padding-bottom:calc(28px + env(safe-area-inset-bottom))}
-      .hero{padding:20px 16px 19px;border-radius:23px}
-      .brand-pill{max-width:100%;white-space:normal;line-height:1.35}
-      .hero-title{font-size:clamp(2.15rem,12vw,3.15rem);margin-top:15px}
-      .hero-copy{font-size:13px;line-height:1.8}
-      .hero-meta{gap:6px}
-      .meta-chip{font-size:10px;padding:7px 9px}
-      .section-head{margin-top:24px}
-      .product{padding:15px;border-radius:21px;margin-bottom:11px}
-      .product-top{align-items:flex-start}
-      .product-name{font-size:17px;min-width:0}
-      .product-name .icon-wrap{width:35px;height:35px;flex-basis:35px}
-      .tag{padding:6px 8px;font-size:8px;letter-spacing:.02em}
-      .feature-list{font-size:12px;gap:8px;margin:14px 0 16px}
-      .bottom-row{align-items:center;gap:10px}
-      .price{font-size:23px}
-      .price small{font-size:9px;margin-top:6px}
-      .buy{min-width:108px;padding:10px 13px;font-size:11px}
-      .trust{gap:8px}
-      .trust-card{padding:12px;border-radius:16px}
-      .float-chat span{display:none}
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 22px; }
+    body { margin: 0; font-family: var(--font); background: var(--bg); color: var(--text); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+    body::before { content: ''; position: absolute; z-index: -1; inset: 0 0 auto; height: 900px; pointer-events: none; background: radial-gradient(ellipse at 85% 0, rgba(103, 79, 193, .16), transparent 55%), radial-gradient(ellipse at 0 30%, rgba(56, 103, 139, .08), transparent 50%); }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    button { cursor: pointer; }
+    button, a, summary { -webkit-tap-highlight-color: transparent; }
+    button { color: inherit; }
+    svg { display: block; flex-shrink: 0; }
+    [hidden] { display: none !important; }
+    :focus-visible { outline: 3px solid var(--violet); outline-offset: 4px; }
+    ::selection { background: #5545a4; color: white; }
+    .mm-font { font-family: 'Noto Sans Myanmar', var(--font); }
+    .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .skip-link { position: fixed; top: 10px; left: 10px; z-index: 100; transform: translateY(-160%); background: #ddd8ff; color: #161124; border-radius: 8px; padding: 12px; }
+    .skip-link:focus { transform: none; }
+    .shell { max-width: 1080px; width: 100%; margin: 0 auto; padding: 24px max(24px, env(safe-area-inset-left)) calc(24px + env(safe-area-inset-bottom)); }
+    .hero { position: relative; isolation: isolate; border: 1px solid var(--line); background: linear-gradient(120deg, #171927, #10131d 72%); border-radius: 28px; overflow: hidden; }
+    .hero::before { content: ''; pointer-events: none; position: absolute; inset: 0; background-image: linear-gradient(rgba(210,210,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(210,210,255,.025) 1px, transparent 1px); background-size: 38px 38px; mask-image: linear-gradient(90deg, transparent, black); }
+    .hero::after { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(110deg, transparent 34%, rgba(255,255,255,.025) 43%, rgba(255,255,255,.13) 50%, rgba(211,202,255,.05) 56%, transparent 66%); opacity: 0; transform: translate3d(-110%,0,0); animation: hero-shine 8s ease-in-out infinite; }
+    @keyframes hero-shine {
+      0%, 15% { transform: translate3d(-110%,0,0); opacity: 0; }
+      20% { opacity: 1; }
+      50% { transform: translate3d(110%,0,0); opacity: 1; }
+      55%, 100% { transform: translate3d(110%,0,0); opacity: 0; }
     }
-    @media (max-width:360px){
-      .hero{padding-inline:14px}
-      .product{padding:13px}
-      .product-top{gap:7px}
-      .product-name{font-size:16px;gap:7px}
-      .tag{font-size:7.5px;padding:5px 7px}
-      .feature-list{font-size:11.5px}
-      .bottom-row{gap:8px}
-      .price{font-size:21px}
-      .buy{min-width:100px;padding-inline:11px}
+    .hero-main { position: relative; display: grid; grid-template-columns: 1.35fr 1fr; gap: 32px; align-items: center; padding: 40px 38px 32px; }
+    .eyebrow { display: flex; align-items: center; gap: 8px; color: #c1bbef; font-size: 10px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    .eyebrow-dot { height: 6px; width: 6px; border-radius: 50%; background: #bcb0ff; box-shadow: 0 0 16px rgba(174,153,255,.45); }
+    .hero-title { font-size: clamp(50px, 7vw, 78px); letter-spacing: -.065em; font-weight: 800; line-height: 1.08; margin: 18px 0 14px; }
+    .hero-title span { color: #bfb4ff; }
+    .hero-copy { margin: 0; max-width: 510px; font-size: 13px; line-height: 1.95; color: #afb4c9; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 22px; color: #d3d4e1; font-size: 10px; font-weight: 600; }
+    .hero-meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .hero-meta svg { width: 13px; height: 13px; color: #bdb2ff; }
+    .service-display { position: relative; border: 1px solid rgba(192,179,255,.12); border-radius: 22px; padding: 22px; background: rgba(11,12,21,.55); transform: rotate(-2deg); box-shadow: 0 16px 45px rgba(0,0,0,.18); }
+    .display-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+    .display-label { color: #939aae; font-size: 9px; font-weight: 700; letter-spacing: .15em; }
+    .display-badge { border: 1px solid rgba(191,179,255,.14); background: rgba(179,161,255,.05); color: #c1b8ed; padding: 5px 7px; border-radius: 6px; font-size: 9px; }
+    .service-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+    .service-tile { display: flex; align-items: center; gap: 9px; padding: 14px 10px; background: rgba(255,255,255,.035); border: 1px solid rgba(255,255,255,.055); border-radius: 12px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .tile-icon { color: var(--accent); display: grid; place-items: center; }
+    .tile-icon svg { width: 21px; height: 21px; }
+    [data-brand="spotify"], [data-service="spotify"] { --accent: #51da91; --accent-rgb: 81,218,145; --button-text: #072415; }
+    [data-brand="netflix"], [data-service="netflix"] { --accent: #ff6e7c; --accent-rgb: 255,110,124; --button-text: #320e16; }
+    [data-brand="youtube"], [data-service="youtube"] { --accent: #ff9472; --accent-rgb: 255,148,114; --button-text: #34160c; }
+    [data-brand="outline_100gb"], [data-service="outline_100gb"] { --accent: #65ddcd; --accent-rgb: 101,221,205; --button-text: #092f29; }
+    .display-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 20px; color: #9298ad; font-size: 9px; }
+    .display-foot svg { width: 15px; height: 15px; color: #bcb2f0; }
+    .contact-panel { position: relative; display: flex; align-items: center; gap: 24px; padding: 18px 28px; background: rgba(7,9,16,.33); border-top: 1px solid var(--line); }
+    .contact-title { font-size: 10px; color: #a9abc1; font-weight: 600; white-space: nowrap; }
+    .contact-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); width: 100%; gap: 8px; }
+    .contact-link { min-width: 0; display: flex; align-items: center; gap: 8px; padding: 9px 10px; min-height: 44px; border: 1px solid var(--line); border-radius: 10px; color: #d3d5e2; font-size: 10px; font-weight: 600; background: rgba(255,255,255,.018); }
+    .contact-icon { color: #b8abfc; }
+    .contact-icon svg { width: 16px; height: 16px; }
+    .contact-arrow { margin-left: auto; width: 12px; height: 12px; color: #747d93; }
+    .contact-link:hover { border-color: rgba(188,176,255,.4); background: rgba(188,176,255,.05); }
+    .contact-phone .contact-icon { color: #79d8a1; }
+    .contact-messenger .contact-icon { color: #99b3ff; }
+    .contact-telegram .contact-icon { color: #8ed5f0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin: 38px 0 18px; }
+    .section-kicker { font-size: 9px; color: #9e92d8; letter-spacing: .18em; font-weight: 700; text-transform: uppercase; }
+    .section-title { margin: 7px 0 0; font-weight: 700; font-size: 24px; line-height: 1.6; letter-spacing: -.035em; }
+    .section-note { font-size: 11px; color: #8c93a8; white-space: nowrap; }
+    .catalog-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 15px; }
+    .filters { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px; padding: 4px; border: 1px solid var(--line); background: #10131e; border-radius: 13px; }
+    .filter { padding: 10px 16px; min-height: 42px; border: 0; background: transparent; border-radius: 9px; color: #a1a7bb; font-size: 11px; font-weight: 600; line-height: 1.6; }
+    .filter[aria-pressed="true"] { background: #ddd8ff; color: #2c2445; }
+    .search-box { display: flex; align-items: center; gap: 9px; border: 1px solid var(--line); border-radius: 12px; background: #10131e; min-width: 190px; width: 240px; padding: 0 12px; }
+    .search-box svg { width: 16px; height: 16px; color: #8b93a8; }
+    .search-box input { color: #ebecf3; background: transparent; border: 0; outline: 0; padding: 13px 0; font-size: 11px; width: 100%; min-width: 0; }
+    .search-box input::placeholder { color: #8b93a8; opacity: 1; }
+    .search-box:focus-within { outline: 2px solid var(--violet); outline-offset: 2px; }
+    .filter-count { margin: 0 0 15px 2px; color: #a0a7ba; font-size: 10px; }
+    .catalog-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+    .product { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 24px; border: 1px solid var(--line); background: linear-gradient(145deg, #151923, #10131c); border-radius: 22px; overflow: hidden; transition: border-color .2s, transform .2s, box-shadow .2s; }
+    .product::before { content: ''; height: 2px; position: absolute; top: 0; left: 24px; right: 24px; background: linear-gradient(90deg, rgba(var(--accent-rgb),.8), rgba(var(--accent-rgb),.04)); }
+    .product-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .product-name { display: flex; align-items: center; gap: 12px; font-size: 20px; font-weight: 750; letter-spacing: -.6px; min-width: 0; }
+    .icon-wrap { display: grid; place-items: center; width: 43px; height: 43px; flex: 0 0 43px; border-radius: 13px; background: rgba(var(--accent-rgb),.09); color: var(--accent); border: 1px solid rgba(var(--accent-rgb),.12); }
+    .icon-wrap svg { width: 22px; height: 22px; }
+    .tag { color: var(--accent); border: 1px solid rgba(var(--accent-rgb),.14); background: rgba(var(--accent-rgb),.065); border-radius: 6px; padding: 6px 8px; font-size: 8px; font-weight: 700; line-height: 1.4; letter-spacing: .04em; white-space: nowrap; }
+    .feature-list { padding: 0; list-style: none; display: grid; align-content: start; gap: 9px; margin: 24px 0; color: #bdc4d4; font-size: 12px; flex: 1; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 9px; line-height: 1.7; }
+    .check { color: var(--accent); width: 14px; height: 14px; margin-top: 3px; flex: 0 0 14px; }
+    .bottom-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 19px; border-top: 1px solid var(--line); }
+    .price { display: flex; align-items: baseline; gap: 5px; font-size: 31px; line-height: 1.12; font-weight: 800; letter-spacing: -1.4px; font-variant-numeric: tabular-nums; }
+    .currency { font-size: 13px; color: #a3aabd; font-weight: 500; letter-spacing: 0; }
+    .billing-period { color: #9aa2b5; font-size: 10px; margin-top: 7px; }
+    .buy { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 46px; min-width: 136px; background: var(--accent); color: var(--button-text); border: 1px solid transparent; border-radius: 12px; font-size: 11px; line-height: 1.8; font-weight: 700; padding: 10px 15px; transition: filter .2s, transform .2s; }
+    .buy svg { width: 16px; height: 16px; }
+    .buy:hover { filter: brightness(1.08); }
+    .buy:active { transform: scale(.98); }
+    .catalog-note { display: flex; align-items: flex-start; gap: 8px; color: #9fa7ba; font-size: 10px; line-height: 1.9; margin: 16px 2px 0; }
+    .catalog-note svg { width: 14px; height: 14px; margin-top: 3px; color: #a7a0ce; }
+    .empty-state { padding: 48px 20px; border: 1px dashed var(--line); border-radius: 20px; text-align: center; color: #acb3c9; font-size: 13px; line-height: 1.9; }
+    .reset-button { display: block; margin: 18px auto 0; padding: 10px 18px; min-height: 44px; border: 1px solid var(--line); border-radius: 10px; background: #1b1e2c; font-size: 11px; color: #d6d2f2; }
+    .trust { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }
+    .trust-card { border: 1px solid var(--line); border-radius: 17px; padding: 18px; background: rgba(18,21,32,.6); }
+    .trust-icon { width: 30px; height: 30px; display: grid; place-items: center; background: rgba(182,173,255,.07); color: #b9b0e9; border-radius: 9px; }
+    .trust-icon svg { width: 16px; height: 16px; }
+    .trust-title { font-size: 12px; font-weight: 650; margin: 14px 0 6px; }
+    .trust-copy { font-size: 10px; color: #a0a8bc; line-height: 1.9; margin: 0; }
+    .steps { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; list-style: none; margin: 0; padding: 0; }
+    .step { min-width: 0; padding: 20px; border: 1px solid var(--line); border-radius: 17px; background: linear-gradient(145deg, #161a26, #10131d); }
+    .step-num { display: inline-grid; place-items: center; width: 33px; height: 33px; border-radius: 10px; border: 1px solid rgba(182,173,255,.18); background: rgba(182,173,255,.08); color: #c4b9ff; font-size: 11px; letter-spacing: .04em; font-weight: 700; }
+    .step-title { font-size: 13px; font-weight: 650; line-height: 1.6; margin: 15px 0 7px; }
+    .step-copy { font-size: 11px; color: #a9b1c5; line-height: 1.9; margin: 0; }
+    .faq { display: grid; gap: 9px; }
+    .faq details { border: 1px solid var(--line); border-radius: 14px; background: #10131d; padding: 0 18px; }
+    .faq summary { display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 58px; padding: 14px 0; cursor: pointer; list-style: none; font-size: 12px; line-height: 1.9; font-weight: 500; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary svg { height: 16px; width: 16px; color: #a99fde; transition: transform .2s; }
+    .faq details[open] summary svg { transform: rotate(45deg); }
+    .faq details[open] summary { color: #d2cafa; }
+    .faq p { color: #a4aec5; font-size: 11px; line-height: 2; margin: 0 0 18px; }
+    .footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 42px; padding: 22px 0 8px; border-top: 1px solid var(--line); font-size: 10px; color: #939aae; }
+    .footer-brand { color: #d4d5e2; font-weight: 700; font-size: 12px; }
+    .footer-contact { display: inline-flex; flex-wrap: wrap; gap: 14px; }
+    .footer-contact a:hover { color: #d8d2ff; }
+    .float-chat { position: fixed; z-index: 25; right: max(22px,env(safe-area-inset-right)); bottom: max(20px,env(safe-area-inset-bottom)); width: 52px; height: 52px; display: grid; place-items: center; background: #d7d0ff; color: #35244d; border: 1px solid #e4dfff; border-radius: 17px; box-shadow: 0 8px 28px #0006; transition: transform .2s; }
+    .float-chat svg { width: 23px; height: 23px; }
+    .float-chat:hover { transform: translateY(-3px); }
+    dialog { padding: 0; width: min(460px,calc(100vw - 28px)); max-height: calc(100dvh - 40px); background: #151924; color: var(--text); border: 1px solid #343a51; border-radius: 23px; box-shadow: 0 28px 100px #0009; overflow-y: auto; }
+    dialog::backdrop { background: rgba(3,5,12,.78); backdrop-filter: blur(6px); }
+    .dialog-inner { padding: 26px; }
+    .dialog-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .dialog-kicker { color: #a399d8; font-size: 9px; letter-spacing: .16em; font-weight: 700; }
+    .close-button { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 11px; color: #c2c7d8; background: rgba(255,255,255,.035); }
+    .close-button svg { width: 16px; height: 16px; }
+    .dialog-title { font-size: 27px; letter-spacing: -.8px; margin: 8px 0 18px; }
+    .order-summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; border: 1px solid var(--line); background: #10131d; border-radius: 14px; padding: 16px; margin-bottom: 20px; }
+    .order-summary strong { display: block; font-size: 22px; letter-spacing: -.7px; }
+    .order-summary small { display: block; font-size: 10px; color: #a3acbf; margin-top: 6px; }
+    .order-summary svg { width: 23px; height: 23px; color: #b5a7f0; }
+    .message-label { display: block; font-size: 11px; color: #c5cbdb; margin-bottom: 10px; line-height: 1.8; }
+    .order-message { display: block; width: 100%; resize: vertical; min-height: 146px; font-size: 11px; line-height: 2; background: #0d111a; color: #c6cedf; border: 1px solid var(--line); border-radius: 12px; padding: 13px; }
+    .copy-message { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 14px; margin-top: 10px; background: #25273b; border: 1px solid #37354e; border-radius: 10px; color: #d8d1f3; font-size: 11px; }
+    .copy-message svg { width: 15px; height: 15px; }
+    .order-hint { font-size: 10px; color: #a6aec3; line-height: 1.95; margin: 16px 0; }
+    .messenger-order { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 48px; border: 1px solid #ddd8ff; background: #d7cfff; color: #322247; border-radius: 12px; font-size: 12px; font-weight: 700; line-height: 1.8; padding: 12px; }
+    .messenger-order svg { width: 19px; height: 19px; }
+    .alternative-chats { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 10px; }
+    .alternative-chats a { display: flex; align-items: center; justify-content: center; padding: 11px; min-height: 44px; font-size: 11px; border: 1px solid var(--line); border-radius: 11px; color: #c8c5db; }
+    .copy-status { color: #bfb4ff; font-size: 10px; line-height: 1.8; margin: 10px 0 0; }
+    @media (hover:hover) {
+      .product:hover { transform: translateY(-3px); border-color: rgba(var(--accent-rgb),.32); box-shadow: 0 14px 34px #0003; }
     }
-    @media (min-width:680px){.trust{grid-template-columns:repeat(4,minmax(0,1fr))}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
-
-
-
-    /* ===== Premium IT Contact Bar ===== */
-    .contact-panel{
-      margin-top:14px;
-      padding:12px;
-      border-radius:18px;
-      background:rgba(255,255,255,.035);
-      border:1px solid rgba(255,255,255,.07);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+    @media (max-width:900px) {
+      .hero-main { gap: 24px; padding: 32px 28px 28px; }
+      .service-display { padding: 17px; }
+      .service-tile { gap: 7px; font-size: 10px; padding: 12px 8px; }
+      .contact-panel { gap: 16px; padding-inline: 24px; }
+      .contact-title { display: none; }
+      .trust-card { padding: 15px; }
+      .steps { grid-template-columns: repeat(2,minmax(0,1fr)); }
     }
-
-    .contact-title{
-      display:flex;
-      align-items:center;
-      gap:7px;
-      margin:0 0 9px;
-      color:#cbd5e1;
-      font-size:10px;
-      font-weight:800;
-      letter-spacing:.08em;
-      line-height:1.2;
-      text-transform:uppercase;
+    @media (max-width:700px) {
+      .shell { padding-inline: max(18px,env(safe-area-inset-left)); }
+      .hero-main { grid-template-columns: 1fr; }
+      .hero-title { font-size: 62px; }
+      .hero-copy { max-width: 100%; }
+      .service-display { transform: none; padding: 15px; }
+      .display-top { margin-bottom: 13px; }
+      .service-tiles { grid-template-columns: repeat(4,minmax(0,1fr)); }
+      .service-tile { flex-direction: column; gap: 8px; padding: 12px 4px; font-size: 9px; }
+      .display-foot { display: none; }
+      .contact-panel { padding: 15px 20px; }
+      .contact-link { justify-content: center; padding: 9px 7px; gap: 6px; }
+      .contact-arrow { display: none; }
+      .product { padding: 20px; }
+      .product-name { font-size: 18px; gap: 9px; }
+      .product-top { flex-wrap: wrap; }
+      .price { font-size: 27px; }
+      .buy { min-width: 118px; gap: 8px; padding-inline: 12px; }
+      .bottom-row { flex-wrap: wrap; }
+      .trust { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .steps { gap: 12px; }
+      .section-title { font-size: 22px; }
+      .footer { padding-bottom: 60px; }
     }
-
-    .contact-title-dot{
-      width:5px;
-      height:5px;
-      min-width:5px;
-      flex:0 0 5px;
-      border-radius:999px;
-      background:#a5b4fc;
-      box-shadow:0 0 12px rgba(165,180,252,.9);
+    @media (max-width:560px) {
+      .shell { padding-top: 16px; padding-inline: max(14px,env(safe-area-inset-left)); }
+      .hero { border-radius: 22px; }
+      .hero-main { padding: 25px 20px 20px; gap: 23px; }
+      .hero-title { font-size: clamp(45px,13vw,62px); margin-block: 16px 12px; }
+      .hero-copy { font-size: 12px; line-height: 1.95; }
+      .eyebrow { font-size: 8px; letter-spacing: .13em; }
+      .hero-meta { font-size: 9px; gap: 11px; margin-top: 17px; }
+      .service-display { border-radius: 15px; padding: 12px; }
+      .display-label { font-size: 8px; }
+      .display-badge { font-size: 8px; }
+      .service-tiles { gap: 6px; }
+      .service-tile { font-size: 8px; border-radius: 9px; }
+      .tile-icon svg { width: 20px; height: 20px; }
+      .contact-panel { padding: 14px 16px; }
+      .contact-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px; }
+      .contact-link { justify-content: flex-start; padding-inline: 12px; font-size: 11px; gap: 9px; }
+      .contact-arrow { display: block; }
+      .section-head { margin-top: 30px; margin-bottom: 16px; align-items: center; gap: 10px; }
+      .section-title { font-size: 19px; line-height: 1.8; }
+      .section-note { font-size: 9px; }
+      .catalog-toolbar { align-items: stretch; flex-direction: column; gap: 12px; }
+      .filters { width: 100%; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 3px; }
+      .filter { padding: 9px 4px; font-size: 10px; }
+      .search-box { width: 100%; }
+      .search-box input { padding: 14px 0; font-size: 12px; }
+      .catalog-grid { grid-template-columns: 1fr; gap: 13px; }
+      .product { border-radius: 20px; padding: 21px; }
+      .product-top { flex-wrap: nowrap; }
+      .product-name { font-size: 20px; gap: 11px; }
+      .icon-wrap { width: 41px; height: 41px; flex-basis: 41px; }
+      .tag { font-size: 7.5px; padding: 6px; }
+      .feature-list { margin: 21px 0; font-size: 12px; gap: 8px; }
+      .bottom-row { flex-wrap: nowrap; padding-top: 17px; }
+      .price { font-size: 29px; }
+      .buy { min-width: 125px; padding-inline: 13px; min-height: 47px; }
+      .catalog-note { font-size: 9px; }
+      .trust { gap: 10px; }
+      .trust-card { padding: 17px; border-radius: 15px; }
+      .trust-copy { font-size: 10px; }
+      .steps { grid-template-columns: 1fr; gap: 10px; }
+      .step { display: grid; grid-template-columns: 36px minmax(0,1fr); column-gap: 14px; row-gap: 5px; padding: 18px; border-radius: 15px; }
+      .step-num { grid-column: 1; grid-row: 1 / 3; width: 36px; height: 36px; font-size: 12px; }
+      .step-title { grid-column: 2; grid-row: 1; margin: 0; }
+      .step-copy { grid-column: 2; grid-row: 2; font-size: 11px; }
+      .faq details { padding-inline: 15px; }
+      .faq summary { font-size: 11px; }
+      .footer { margin-top: 30px; align-items: flex-start; flex-direction: column; gap: 12px; }
+      .float-chat { width: 48px; height: 48px; right: max(16px,env(safe-area-inset-right)); bottom: max(16px,env(safe-area-inset-bottom)); border-radius: 15px; }
+      .dialog-inner { padding: 21px; }
     }
-
-    .contact-grid{
-      width:100%;
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      align-items:stretch;
-      gap:8px;
+    @media (max-width:360px) {
+      .shell { padding-inline: 10px; }
+      .hero-main { padding-inline: 16px; }
+      .product { padding: 17px; }
+      .product-name { font-size: 18px; gap: 8px; }
+      .icon-wrap { width: 37px; height: 37px; flex-basis: 37px; }
+      .tag { font-size: 7px; padding: 5px; letter-spacing: 0; }
+      .price { font-size: 26px; }
+      .buy { min-width: 114px; gap: 8px; padding-inline: 10px; }
+      .service-tile { font-size: 7px; }
+      .section-note { display: none; }
     }
-
-    .contact-link{
-      width:100%;
-      min-width:0;
-      min-height:42px;
-      box-sizing:border-box;
-      display:flex;
-      flex-direction:row;
-      align-items:center;
-      justify-content:center;
-      gap:7px;
-      padding:7px 9px;
-      border-radius:12px;
-      background:rgba(255,255,255,.035);
-      border:1px solid rgba(255,255,255,.065);
-      color:#cbd5e1;
-      text-decoration:none;
-      font-size:10px;
-      font-weight:700;
-      line-height:1;
-      white-space:nowrap;
-      overflow:hidden;
-      transition:transform .18s ease,background .18s ease,border-color .18s ease,filter .18s ease;
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .hero::after { display: none; }
     }
-
-    .contact-link:hover{
-      transform:translateY(-1px);
-      background:rgba(255,255,255,.06);
-      border-color:rgba(255,255,255,.12);
-      filter:brightness(1.05);
+    @page { size: A4 portrait; margin: 12mm; }
+    @media print {
+      :root { color-scheme: light; --text: #1e2433; --muted: #515869; --line: #d8dce6; }
+      body { background: white !important; color: #1e2433; font-size: 10pt; }
+      body::before, .service-display, .hero-meta, .contact-panel, .catalog-toolbar, .filter-count, .section-note, .catalog-note, .support-sections, .float-chat, .buy, dialog, .empty-state, .skip-link { display: none !important; }
+      .shell { max-width: none; padding: 0; }
+      .hero { border: 0; border-bottom: 2px solid #dad5eb; background: white; border-radius: 0; }
+      .hero::before, .hero::after { display: none; }
+      .hero-main { display: block; padding: 0 0 16px; }
+      .eyebrow { font-size: 7pt; color: #655889; }
+      .eyebrow-dot { background: #796ca8; box-shadow: none; }
+      .hero-title { font-size: 38pt; margin: 12px 0 8px; }
+      .hero-title span { color: #77669c; }
+      .hero-copy { color: #52596b; font-size: 8pt; line-height: 1.8; max-width: none; }
+      .section-head { margin: 18px 0 14px; }
+      .section-kicker { color: #675885; font-size: 7pt; }
+      .section-title { font-size: 15pt; margin-top: 4px; }
+      .catalog-grid, .catalog-grid[hidden] { display: grid !important; grid-template-columns: 1fr 1fr; gap: 14px; }
+      .product, .product[hidden] { display: flex !important; padding: 17px; background: white; border: 1px solid #d8dce6; border-radius: 13px; break-inside: avoid; box-shadow: none; transform: none; }
+      .product::before { display: none; }
+      [data-service="spotify"] { --accent: #137c43; }
+      [data-service="netflix"] { --accent: #b32537; }
+      [data-service="youtube"] { --accent: #b5421d; }
+      [data-service="outline_100gb"] { --accent: #147a6a; }
+      .product-name { font-size: 14pt; gap: 9px; color: #1e2433; }
+      .icon-wrap { background: #f5f6f9; width: 33px; height: 33px; flex-basis: 33px; border: 1px solid #e2e5ed; border-radius: 9px; }
+      .icon-wrap svg { width: 19px; height: 19px; }
+      .tag { color: #515869; background: #f4f5f8; border: 1px solid #e2e5ed; font-size: 6pt; padding: 4px; }
+      .feature-list { color: #414a5c; font-size: 8pt; gap: 6px; margin: 17px 0; }
+      .feature-list li { line-height: 1.7; }
+      .check { width: 12px; height: 12px; flex-basis: 12px; margin-top: 3px; }
+      .bottom-row { padding-top: 12px; }
+      .price { color: #1e2433; font-size: 22pt; }
+      .currency { color: #515869; font-size: 9pt; }
+      .billing-period { color: #515869; font-size: 8pt; }
+      .footer { margin-top: 20px; padding: 14px 0 0; font-size: 8pt; color: #52596b; flex-direction: row; align-items: center; }
+      .footer-brand { color: #222b3b; font-size: 9pt; }
+      .footer-contact { gap: 12px; }
+      a[href]::after { content: none !important; }
     }
-
-    .contact-link:active{
-      transform:scale(.985);
-    }
-
-    .contact-icon{
-      width:24px;
-      height:24px;
-      min-width:24px;
-      max-width:24px;
-      flex:0 0 24px;
-      display:grid;
-      place-items:center;
-      overflow:hidden;
-      border-radius:8px;
-      line-height:0;
-    }
-
-    .contact-icon svg{
-      width:14px;
-      height:14px;
-      min-width:14px;
-      min-height:14px;
-      max-width:14px;
-      max-height:14px;
-      display:block;
-      flex:none;
-      position:static;
-      margin:0;
-      padding:0;
-      transform:none;
-    }
-
-    .contact-label{
-      min-width:0;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-      line-height:1;
-    }
-
-    .contact-phone .contact-icon{background:rgba(34,197,94,.12);color:#86efac}
-    .contact-messenger .contact-icon{background:rgba(59,130,246,.12);color:#93c5fd}
-    .contact-viber .contact-icon{background:rgba(139,92,246,.12);color:#c4b5fd}
-    .contact-telegram .contact-icon{background:rgba(14,165,233,.12);color:#7dd3fc}
-
-    /* Keep them horizontal on normal phones; 2 x 2 only on narrow screens. */
-    @media (max-width:560px){
-      .contact-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-        gap:7px;
-      }
-      .contact-link{
-        justify-content:flex-start;
-        padding:8px 9px;
-      }
-    }
-
-    @media (max-width:370px){
-      .contact-panel{padding:10px}
-      .contact-grid{gap:6px}
-      .contact-link{
-        min-height:40px;
-        gap:6px;
-        padding:7px 8px;
-        font-size:9px;
-      }
-      .contact-icon{
-        width:22px;
-        height:22px;
-        min-width:22px;
-        flex-basis:22px;
-      }
-      .contact-icon svg{
-        width:13px;
-        height:13px;
-        min-width:13px;
-        min-height:13px;
-        max-width:13px;
-        max-height:13px;
-      }
-    }
-
-</style>
+  </style>
 </head>
 <body>
-  <div class="page-bg" aria-hidden="true"><div class="grid-bg"></div></div>
-
-  <main class="shell">
-    <section class="hero glass shine-card">
-      <span class="brand-pill"><span class="brand-dot"></span> Premium IT • Digital Services</span>
-      <h1 class="hero-title">Premium <span class="hero-gradient">IT</span></h1>
-      <p class="hero-copy mm-font">သင်နေ့တိုင်းသုံးတဲ့ Digital Services တွေကို ပိုလွယ်ကူ၊ ပိုမြန်ပြီး ယုံကြည်စိတ်ချစွာ ရယူနိုင်အောင် တစ်နေရာတည်းမှာ စုစည်းပေးထားပါတယ်။</p>
-      <div class="hero-meta">
-        <span class="meta-chip">⚡ Fast Delivery</span>
-        <span class="meta-chip">💬 Messenger Support</span>
-        <span class="meta-chip">🔒 Reliable Service</span>
-      </div>
-
-      <div class="contact-panel" aria-label="Contact Premium IT">
-        <div class="contact-title"><span class="contact-title-dot"></span>Contact Premium IT</div>
-        <div class="contact-grid">
-          <a class="contact-link contact-phone" href="tel:+959792664668" aria-label="Call Premium IT">
-            <span class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6.27 6.27l1.27-1.28a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92Z"/>
-              </svg>
-            </span>
-            <span class="contact-label">Phone</span>
-          </a>
-
-          <a class="contact-link contact-messenger" href="https://m.me/111917871817015" data-messenger-ref="" aria-label="Message Premium IT on Messenger">
-            <span class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2.2c-5.57 0-10 4.01-10 9.37 0 2.95 1.46 5.57 3.77 7.29V22l3.23-1.77c.91.25 1.87.38 3 .38 5.57 0 10-4.01 10-9.04C22 6.21 17.57 2.2 12 2.2Zm.93 12.13-2.61-2.79-5.1 2.79 5.59-5.93 2.61 2.8 5.07-2.8-5.56 5.93Z"/>
-              </svg>
-            </span>
-            <span class="contact-label">Messenger</span>
-          </a>
-
-          <a class="contact-link contact-viber" href="https://viber.me/959792664668" aria-label="Chat with Premium IT on Viber">
-            <span class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.76 2.56C14.9.52 8.84.3 5.97 1.52 2.78 2.84 1.15 5.9 1.06 9.23c-.08 2.88.47 5.47 2.47 7.76.55.63 1.2 1.13 1.93 1.48l-.44 3.07c-.07.47.45.79.85.53l3.28-2.16c1.26.33 2.62.5 4.08.5 3.45 0 6.48-.83 8.2-3.88 1.25-2.2 1.42-7.95-.16-10.91-.88-1.64-2.2-2.44-3.51-3.06Zm-1.28 11.59c-.4.63-1.14.98-1.82 1.06-1.1.13-2.66-.41-4.47-1.65-1.57-1.07-3.03-2.48-4.11-4.05-.84-1.22-1.34-2.41-1.41-3.5-.06-.94.25-1.77.91-2.24.52-.37 1.12-.38 1.67-.2.43.14.74.44.94.85l.82 1.72c.2.42.18.88-.06 1.27l-.55.86a.63.63 0 0 0-.02.69c.55.84 1.15 1.55 1.84 2.14.68.59 1.45 1.11 2.36 1.58a.63.63 0 0 0 .69-.07l.76-.71c.35-.33.85-.45 1.31-.3l1.89.61c.57.18.97.51 1.23 1 .32.62.31 1.3.03 1.79Z"/>
-              </svg>
-            </span>
-            <span class="contact-label">Viber</span>
-          </a>
-
-          <a class="contact-link contact-telegram" href="https://t.me/PremiumITAdmin" aria-label="Chat with Premium IT on Telegram">
-            <span class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M21.5 3.3 18.44 20.1c-.23 1.19-.9 1.48-1.82.92l-5.08-3.74-2.45 2.36c-.27.27-.49.49-1 .49l.36-5.17 9.4-8.49c.41-.36-.09-.56-.63-.2L5.6 13.1.63 11.55c-1.08-.34-1.1-1.08.23-1.6L20.28 3.1c.88-.32 1.65.2 1.22.2Z"/>
-              </svg>
-            </span>
-            <span class="contact-label">Telegram</span>
-          </a>
+  <a class="skip-link mm-font" href="#plans">စျေးနှုန်းများသို့ သွားရန်</a>
+  <div class="shell">
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-main">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-dot"></span>Digital subscriptions, made simple</div>
+            <h1 class="hero-title" id="hero-title">Premium <span>IT</span></h1>
+            <p class="hero-copy mm-font">သင်နေ့တိုင်းသုံးတဲ့ Digital Services တွေကို ပိုလွယ်ကူ၊ ပိုမြန်ပြီး ယုံကြည်စိတ်ချစွာ ရယူနိုင်အောင် တစ်နေရာတည်းမှာ စုစည်းပေးထားပါတယ်။</p>
+            <div class="hero-meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-7z"/></svg>Fast Delivery</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 3.9a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/></svg>Easy Support</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 3 7v6c0 5 9 8 9 8s9-3 9-8V7z"/><path d="m8 12 3 3 5-6"/></svg>Reliable Service</span>
+            </div>
+          </div>
+          <div class="service-display" aria-label="Available digital services">
+            <div class="display-top"><span class="display-label">YOUR DAILY ESSENTIALS</span><span class="display-badge">4 SERVICES</span></div>
+            <div class="service-tiles"><div class="service-tile" data-brand="spotify"><span class="tile-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.24z"/></svg></span><span>Spotify</span></div>
+<div class="service-tile" data-brand="netflix"><span class="tile-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.596 0H21v24h-4.404L8.356 7.647V24H3.952V0h4.452l8.192 16.29V0z"/></svg></span><span>Netflix</span></div>
+<div class="service-tile" data-brand="youtube"><span class="tile-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></span><span>YouTube</span></div>
+<div class="service-tile" data-brand="outline_100gb"><span class="tile-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22V2Z" fill="currentColor"/><path d="M12 4V2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22V20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4Z" fill="currentColor"/></svg></span><span>Outline VPN</span></div></div>
+            <div class="display-foot"><span>Music · Entertainment · Connectivity</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></div>
+          </div>
         </div>
+        <div class="contact-panel">
+          <div class="contact-title">LET'S TALK</div>
+          <nav class="contact-grid" aria-label="Contact Premium IT"><a class="contact-link contact-phone" href="tel:+959792664668" aria-label="Contact Premium IT via Phone"><span class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6.27 6.27l1.27-1.28a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92Z"/>
+              </svg></span><span>Phone</span><svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+<a class="contact-link contact-messenger" href="https://m.me/111917871817015" aria-label="Contact Premium IT via Messenger"><span class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.2c-5.57 0-10 4.01-10 9.37 0 2.95 1.46 5.57 3.77 7.29V22l3.23-1.77c.91.25 1.87.38 3 .38 5.57 0 10-4.01 10-9.04C22 6.21 17.57 2.2 12 2.2Zm.93 12.13-2.61-2.79-5.1 2.79 5.59-5.93 2.61 2.8 5.07-2.8-5.56 5.93Z"/>
+              </svg></span><span>Messenger</span><svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+<a class="contact-link contact-viber" href="https://viber.me/959792664668" aria-label="Contact Premium IT via Viber"><span class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.76 2.56C14.9.52 8.84.3 5.97 1.52 2.78 2.84 1.15 5.9 1.06 9.23c-.08 2.88.47 5.47 2.47 7.76.55.63 1.2 1.13 1.93 1.48l-.44 3.07c-.07.47.45.79.85.53l3.28-2.16c1.26.33 2.62.5 4.08.5 3.45 0 6.48-.83 8.2-3.88 1.25-2.2 1.42-7.95-.16-10.91-.88-1.64-2.2-2.44-3.51-3.06Zm-1.28 11.59c-.4.63-1.14.98-1.82 1.06-1.1.13-2.66-.41-4.47-1.65-1.57-1.07-3.03-2.48-4.11-4.05-.84-1.22-1.34-2.41-1.41-3.5-.06-.94.25-1.77.91-2.24.52-.37 1.12-.38 1.67-.2.43.14.74.44.94.85l.82 1.72c.2.42.18.88-.06 1.27l-.55.86a.63.63 0 0 0-.02.69c.55.84 1.15 1.55 1.84 2.14.68.59 1.45 1.11 2.36 1.58a.63.63 0 0 0 .69-.07l.76-.71c.35-.33.85-.45 1.31-.3l1.89.61c.57.18.97.51 1.23 1 .32.62.31 1.3.03 1.79Z"/>
+              </svg></span><span>Viber</span><svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+<a class="contact-link contact-telegram" href="https://t.me/PremiumITAdmin" aria-label="Contact Premium IT via Telegram"><span class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M21.5 3.3 18.44 20.1c-.23 1.19-.9 1.48-1.82.92l-5.08-3.74-2.45 2.36c-.27.27-.49.49-1 .49l.36-5.17 9.4-8.49c.41-.36-.09-.56-.63-.2L5.6 13.1.63 11.55c-1.08-.34-1.1-1.08.23-1.6L20.28 3.1c.88-.32 1.65.2 1.22.2Z"/>
+              </svg></span><span>Telegram</span><svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></nav>
+        </div>
+      </section>
+      <section id="plans" aria-labelledby="plans-title">
+        <div class="section-head">
+          <div><div class="section-kicker">Plans & Prices</div><h2 class="section-title mm-font" id="plans-title">သင့်အတွက် service ကို ရွေးပါ</h2></div>
+          <span class="section-note">Clear plans. Simple choices.</span>
+        </div>
+        <div class="catalog-toolbar" id="catalog-toolbar" hidden>
+          <div class="filters" role="group" aria-label="Service categories">
+            <button class="filter mm-font" type="button" data-filter="all" aria-pressed="true" aria-controls="catalog-grid">အားလုံး</button>
+            <button class="filter" type="button" data-filter="music" aria-pressed="false" aria-controls="catalog-grid">Music</button>
+            <button class="filter" type="button" data-filter="video" aria-pressed="false" aria-controls="catalog-grid">Video</button>
+            <button class="filter" type="button" data-filter="vpn" aria-pressed="false" aria-controls="catalog-grid">VPN</button>
+          </div>
+          <label class="search-box" for="service-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.8" cy="10.8" r="7"/><path d="m16 16 5 5"/></svg>
+            <span class="sr-only">Service ရှာရန်</span><input id="service-search" type="search" placeholder="Service ရှာရန်…" autocomplete="off" spellcheck="false" aria-controls="catalog-grid">
+          </label>
+        </div>
+        <p class="filter-count" id="filter-count" role="status" aria-live="polite" aria-atomic="true" hidden>4 services</p>
+        <div class="catalog-grid" id="catalog-grid"><article class="product" data-service="spotify" data-category="music" aria-label="Spotify plan">
+        <div class="product-top"><div class="product-name"><span class="icon-wrap text-green-400"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.24z"/></svg></span><span class="ios-fix">Spotify</span></div><span class="tag tag-green">BEST SELLER</span></div>
+        <ul class="feature-list mm-font"><li><svg class="check text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Official Individual Plan</li><li><svg class="check text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>VPN မလို (Direct Play)</li><li><svg class="check text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Download & Listen Offline</li><li><svg class="check text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Upgrade Your Own Account</li></ul>
+        <div class="bottom-row">
+          <div class="price-block"><div class="price"><span class="price-value">16,000</span><span class="currency">Ks</span></div><div class="billing-period">per month</div></div>
+          <a class="buy mm-font" href="https://m.me/111917871817015?ref=spotify" data-order="spotify" aria-label="ဝယ်ယူရန် — Spotify">ဝယ်ယူရန် <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg></a>
+        </div>
+      </article>
+<article class="product" data-service="netflix" data-category="video" aria-label="Netflix plan">
+        <div class="product-top"><div class="product-name"><span class="icon-wrap text-red-400"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.596 0H21v24h-4.404L8.356 7.647V24H3.952V0h4.452l8.192 16.29V0z"/></svg></span><span class="ios-fix">Netflix</span></div><span class="tag tag-red">PREMIUM PLAN</span></div>
+        <ul class="feature-list mm-font"><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>4K Ultra HD ရုပ်ထွက်</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Download ဆွဲပြီး Offline ကြည့်</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>အကောင့် (လုံးဝ) ပြောင်းစရာမလို</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>PC / Phone / Tablet ကြိုက်ရာသုံး</li></ul>
+        <div class="bottom-row">
+          <div class="price-block"><div class="price"><span class="price-value">15,000</span><span class="currency">Ks</span></div><div class="billing-period">per month</div></div>
+          <a class="buy mm-font" href="https://m.me/111917871817015?ref=netflix" data-order="netflix" aria-label="ဝယ်ယူရန် — Netflix">ဝယ်ယူရန် <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg></a>
+        </div>
+      </article>
+<article class="product" data-service="youtube" data-category="video" aria-label="YouTube plan">
+        <div class="product-top"><div class="product-name"><span class="icon-wrap text-red-400"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></span><span class="ios-fix">YouTube</span></div><span class="tag tag-red">PREMIUM</span></div>
+        <ul class="feature-list mm-font"><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Background Play ရ</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>ကြော်ငြာ (လုံးဝ) မတက်</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Mail တစ်ခုဖြင့် အမြဲသုံးနိုင်</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>YouTube Music ပါ Free ရ</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Download & Listen Offline</li></ul>
+        <div class="bottom-row">
+          <div class="price-block"><div class="price"><span class="price-value">32,000</span><span class="currency">Ks</span></div><div class="billing-period">2 Months Plan</div></div>
+          <a class="buy mm-font" href="https://m.me/111917871817015?ref=youtube" data-order="youtube" aria-label="ဝယ်ယူရန် — YouTube">ဝယ်ယူရန် <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg></a>
+        </div>
+      </article>
+<article class="product" data-service="outline_100gb" data-category="vpn" aria-label="Outline VPN plan">
+        <div class="product-top"><div class="product-name"><span class="icon-wrap text-teal-300"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22V2Z" fill="currentColor"/><path d="M12 4V2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22V20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4Z" fill="currentColor"/></svg></span><span class="ios-fix">Outline VPN</span></div><span class="tag tag-teal">HIGH SPEED</span></div>
+        <ul class="feature-list mm-font"><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>One Click Connect</li><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>iOS / Android / PC အကုန်ရ</li><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Data လက်ကျန် ကိုယ်တိုင်စစ်နိုင်</li><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Device (လုံးဝ) အကန့်အသတ်မရှိ</li></ul>
+        <div class="bottom-row">
+          <div class="price-block"><div class="price"><span class="price-value">10,000</span><span class="currency">Ks</span></div><div class="billing-period">120 GB / Month</div></div>
+          <a class="buy mm-font" href="https://m.me/111917871817015?ref=outline_100gb" data-order="outline_100gb" aria-label="ဝယ်ယူရန် — Outline VPN">ဝယ်ယူရန် <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg></a>
+        </div>
+      </article></div>
+        <div class="empty-state mm-font" id="empty-state" hidden>ရှာနေတဲ့ service ကို မတွေ့ပါ။<br>အမည် သို့မဟုတ် category ပြောင်းပြီး ပြန်ရှာကြည့်ပါ။<button class="reset-button mm-font" id="reset-filters" type="button">အားလုံး ပြန်ကြည့်ရန်</button></div>
+        <p class="catalog-note mm-font"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></svg>“ဝယ်ယူရန်” ကိုနှိပ်ပြီး plan အချက်အလက်များကြည့်ကာ chat မှတစ်ဆင့် အော်ဒါအတည်ပြုနိုင်ပါတယ်။</p>
+      </section>
+      <div class="support-sections">
+        <section aria-labelledby="trust-title">
+          <div class="section-head"><div><div class="section-kicker">Why Premium IT</div><h2 class="section-title" id="trust-title">Simple. Fast. Reliable.</h2></div></div>
+          <div class="trust">
+            <div class="trust-card"><div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-7z"/></svg></div><h3 class="trust-title">Fast Delivery</h3><p class="trust-copy mm-font">Order တင်ပြီး အဆင်ပြေမြန်ဆန်စွာ ရယူနိုင်ပါသည်။</p></div>
+            <div class="trust-card"><div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15a3 3 0 0 1-3 3H8l-5 3V6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3z"/><path d="M7 8h10M7 12h7"/></svg></div><h3 class="trust-title">Easy Support</h3><p class="trust-copy mm-font">Messenger, Viber, Telegram မှတစ်ဆင့် လိုအပ်တာ မေးမြန်းနိုင်ပါတယ်။</p></div>
+            <div class="trust-card"><div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 3 7v6c0 5 9 8 9 8s9-3 9-8V7z"/><path d="m8 12 3 3 5-6"/></svg></div><h3 class="trust-title">Reliable</h3><p class="trust-copy mm-font">Service အချက်အလက်တွေကို ရှင်းလင်းစွာ ပြထားပါတယ်။</p></div>
+            <div class="trust-card"><div class="trust-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3 class="trust-title">Multi-Device</h3><p class="trust-copy mm-font">သတ်မှတ်ထားတဲ့ service အလိုက် device မျိုးစုံအသုံးပြုနိုင်ပါတယ်။</p></div>
+          </div>
+        </section>
+        <section id="how-to-order" aria-labelledby="steps-title">
+          <div class="section-head"><div><div class="section-kicker">How to order</div><h2 class="section-title" id="steps-title">4 easy steps</h2></div></div>
+          <ol class="steps">
+            <li class="step"><span class="step-num" aria-hidden="true">01</span><h3 class="step-title">Choose your plan</h3><p class="step-copy mm-font">လိုချင်တဲ့ service နဲ့ plan ကို ရွေးပါ။</p></li>
+            <li class="step"><span class="step-num" aria-hidden="true">02</span><h3 class="step-title">Copy & chat</h3><p class="step-copy mm-font">“ဝယ်ယူရန်” ကိုနှိပ်ပြီး အော်ဒါစာကို copy လုပ်ကာ chat ထဲ ပို့ပါ။</p></li>
+            <li class="step"><span class="step-num" aria-hidden="true">03</span><h3 class="step-title">Confirm your order</h3><p class="step-copy mm-font">Order အချက်အလက်နဲ့ payment ကို ဆက်လက်စီစဉ်ပါ။</p></li>
+            <li class="step"><span class="step-num" aria-hidden="true">04</span><h3 class="step-title">Enjoy your service</h3><p class="step-copy mm-font">Service အလိုက် စတင်အသုံးပြုနိုင်ပါပြီ။</p></li>
+          </ol>
+        </section>
+        <section id="faq" class="faq-section" aria-labelledby="faq-title">
+          <div class="section-head"><div><div class="section-kicker">Questions, answered</div><h2 class="section-title" id="faq-title">Need to know</h2></div></div>
+          <div class="faq mm-font">
+            <details><summary>ဘယ်လို order တင်ရမလဲ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>သင်လိုချင်တဲ့ product ရဲ့ “ဝယ်ယူရန်” ကိုနှိပ်ပါ။ အော်ဒါအချက်အလက်ကို copy လုပ်ပြီး Messenger, Viber သို့မဟုတ် Telegram မှတစ်ဆင့် ပေးပို့ကာ order ဆက်လုပ်နိုင်ပါတယ်။</p></details>
+            <details><summary>ငွေပေးချေပြီးရင် ဘယ်လိုရမလဲ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Order အချက်အလက်အတည်ပြုပြီး service အလိုက် အသုံးပြုနိုင်မယ့်အချက်အလက်တွေကို ပေးပို့ပေးပါမယ်။</p></details>
+            <details><summary>ပြဿနာဖြစ်ရင် ဘယ်ကိုဆက်သွယ်ရမလဲ?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Messenger, Viber သို့မဟုတ် Telegram မှတစ်ဆင့် Support ကို တိုက်ရိုက်ဆက်သွယ်နိုင်ပါတယ်။ ဖုန်းနံပါတ်မှာ 09 792 664 668 ဖြစ်ပါတယ်။</p></details>
+          </div>
+        </section>
       </div>
-    </section>
-
-    <div class="section-head">
-      <div><div class="section-kicker">Available Plans</div><h2 class="section-title">Choose your service</h2></div>
-      <div class="section-kicker">2026</div>
+    </main>
+    <footer class="footer">
+      <span class="footer-brand">Premium IT · Digital Services</span>
+      <div class="footer-contact"><a href="tel:+959792664668">09 792 664 668</a><a href="https://t.me/PremiumITAdmin">@PremiumITAdmin</a></div>
+      <span>© <span id="copyright-year">2026</span> Premium IT</span>
+    </footer>
+  </div>
+  <a class="float-chat" href="https://m.me/111917871817015" aria-label="Chat with Premium IT on Messenger" title="Messenger support"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.57 0-10 4.01-10 9.37 0 2.95 1.46 5.57 3.77 7.29V22l3.23-1.77c.91.25 1.87.38 3 .38 5.57 0 10-4.01 10-9.04C22 6.21 17.57 2.2 12 2.2Zm.93 12.13-2.61-2.79-5.1 2.79 5.59-5.93 2.61 2.8 5.07-2.8-5.56 5.93Z"/></svg></a>
+  <dialog id="order-dialog" aria-labelledby="order-title">
+    <div class="dialog-inner">
+      <div class="dialog-top"><span class="dialog-kicker">YOUR SELECTED PLAN</span><button class="close-button" type="button" data-close-dialog aria-label="ပိတ်ရန်" autofocus><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+      <h2 class="dialog-title" id="order-title">Your plan</h2>
+      <div class="order-summary"><div><strong id="order-price"></strong><small id="order-period"></small></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"/><path d="M9 4V2h6v2M9 10h6M9 14h6M9 18h3"/></svg></div>
+      <label class="message-label mm-font" for="order-message">အော်ဒါစာကို copy လုပ်ပြီး chat ထဲ ပို့နိုင်ပါတယ်။</label>
+      <textarea class="order-message mm-font" id="order-message" readonly spellcheck="false" rows="5"></textarea>
+      <button class="copy-message mm-font" id="copy-order" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>အော်ဒါစာ Copy လုပ်ရန်</button>
+      <p class="copy-status mm-font" id="order-copy-status" role="status" aria-live="polite" hidden></p>
+      <p class="order-hint mm-font">စာကို copy လုပ်ပြီး အောက်က chat တစ်ခုကို ရွေးပါ။ Chat ထဲမှာ paste လုပ်ကာ order ဆက်လုပ်နိုင်ပါတယ်။</p>
+      <a class="messenger-order mm-font" id="messenger-order" href="https://m.me/111917871817015"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.57 0-10 4.01-10 9.37 0 2.95 1.46 5.57 3.77 7.29V22l3.23-1.77c.91.25 1.87.38 3 .38 5.57 0 10-4.01 10-9.04C22 6.21 17.57 2.2 12 2.2Zm.93 12.13-2.61-2.79-5.1 2.79 5.59-5.93 2.61 2.8 5.07-2.8-5.56 5.93Z"/></svg>Messenger မှ ဆက်သွယ်ရန်</a>
+      <div class="alternative-chats"><a href="https://viber.me/959792664668">Viber</a><a href="https://t.me/PremiumITAdmin">Telegram</a></div>
     </div>
-
-    <a href="https://m.me/111917871817015?ref=spotify" data-messenger-ref="spotify" class="product glass accent-green">
-      <div class="product-top"><div class="product-name"><span class="icon-wrap text-green-400"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.24z"/></svg></span><span>Spotify</span></div><span class="tag tag-green">BEST SELLER</span></div>
-      <ul class="feature-list mm-font"><li><svg class="check text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Official Individual Plan</li><li><svg class="check text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>VPN မလို (Direct Play)</li><li><svg class="check text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Download & Listen Offline</li><li><svg class="check text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Upgrade Your Own Account</li></ul>
-      <div class="bottom-row"><div class="price">16,000Ks<small>per month</small></div><span class="buy buy-green">ဝယ်ယူရန် <span>→</span></span></div>
-    </a>
-
-    <a href="https://m.me/111917871817015?ref=netflix" data-messenger-ref="netflix" class="product glass accent-red">
-      <div class="product-top"><div class="product-name"><span class="icon-wrap text-red-400"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.596 0H21v24h-4.404L8.356 7.647V24H3.952V0h4.452l8.192 16.29V0z"/></svg></span><span>Netflix</span></div><span class="tag tag-red">PREMIUM PLAN</span></div>
-      <ul class="feature-list mm-font"><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>4K Ultra HD ရုပ်ထွက်</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Download ဆွဲပြီး Offline ကြည့်</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>အကောင့် (လုံးဝ) ပြောင်းစရာမလို</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>PC / Phone / Tablet ကြိုက်ရာသုံး</li></ul>
-      <div class="bottom-row"><div class="price">15,000Ks<small>per month</small></div><span class="buy buy-red">ဝယ်ယူရန် <span>→</span></span></div>
-    </a>
-
-    <a href="https://m.me/111917871817015?ref=youtube" data-messenger-ref="youtube" class="product glass accent-red">
-      <div class="product-top"><div class="product-name"><span class="icon-wrap text-red-400"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></span><span>YouTube</span></div><span class="tag tag-red">PREMIUM</span></div>
-      <ul class="feature-list mm-font"><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Background Play ရ</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>ကြော်ငြာ (လုံးဝ) မတက်</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Mail တစ်ခုဖြင့် အမြဲသုံးနိုင်</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>YouTube Music ပါ Free ရ</li><li><svg class="check text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Download & Listen Offline</li></ul>
-      <div class="bottom-row"><div class="price">32,000Ks<small>2 Months Plan</small></div><span class="buy buy-red">ဝယ်ယူရန် <span>→</span></span></div>
-    </a>
-
-    <a href="https://m.me/111917871817015?ref=outline_100gb" data-messenger-ref="outline_100gb" class="product glass accent-teal">
-      <div class="product-top"><div class="product-name"><span class="icon-wrap text-teal-300"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22V2Z" fill="currentColor"/><path d="M12 4V2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22V20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4Z" fill="currentColor"/></svg></span><span>Outline VPN</span></div><span class="tag tag-teal">HIGH SPEED</span></div>
-      <ul class="feature-list mm-font"><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>One Click Connect</li><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>iOS / Android / PC အကုန်ရ</li><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Data လက်ကျန် ကိုယ်တိုင်စစ်နိုင်</li><li><svg class="check text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg>Device (လုံးဝ) အကန့်အသတ်မရှိ</li></ul>
-      <div class="bottom-row"><div class="price">10,000Ks<small>120 GB / Month</small></div><span class="buy buy-teal">ဝယ်ယူရန် <span>→</span></span></div>
-    </a>
-
-    <div class="section-head"><div><div class="section-kicker">Why Premium IT</div><h2 class="section-title">Simple. Fast. Reliable.</h2></div></div>
-    <section class="trust">
-      <div class="trust-card glass"><div class="trust-icon">⚡</div><div class="trust-title">Fast Delivery</div><div class="trust-copy mm-font">Order တင်ပြီး အဆင်ပြေမြန်ဆန်စွာ ရယူနိုင်ပါသည်။</div></div>
-      <div class="trust-card glass"><div class="trust-icon">💬</div><div class="trust-title">Easy Support</div><div class="trust-copy mm-font">Messenger, Viber, Telegram မှတစ်ဆင့် လိုအပ်တာ မေးမြန်းနိုင်ပါတယ်။</div></div>
-      <div class="trust-card glass"><div class="trust-icon">🔒</div><div class="trust-title">Reliable</div><div class="trust-copy mm-font">Service အချက်အလက်တွေကို ရှင်းလင်းစွာ ပြထားပါတယ်။</div></div>
-      <div class="trust-card glass"><div class="trust-icon">📱</div><div class="trust-title">Multi-Device</div><div class="trust-copy mm-font">သတ်မှတ်ထားတဲ့ service အလိုက် device မျိုးစုံအသုံးပြုနိုင်ပါတယ်။</div></div>
-    </section>
-
-    <div class="section-head"><div><div class="section-kicker">How it works</div><h2 class="section-title">3 easy steps</h2></div></div>
-    <section class="steps">
-      <div class="step glass"><div class="step-num">01</div><div><div class="step-title">Choose your plan</div><div class="step-copy mm-font">လိုချင်တဲ့ service နဲ့ plan ကို ရွေးပါ။</div></div></div>
-      <div class="step glass"><div class="step-num">02</div><div><div class="step-title">Tap “ဝယ်ယူရန်”</div><div class="step-copy mm-font">Messenger order chat ကို တိုက်ရိုက်ဖွင့်ပါ။</div></div></div>
-      <div class="step glass"><div class="step-num">03</div><div><div class="step-title">Confirm your order</div><div class="step-copy mm-font">Order အချက်အလက်နဲ့ payment ကို ဆက်လက်စီစဉ်ပါ။</div></div></div>
-      <div class="step glass"><div class="step-num">04</div><div><div class="step-title">Enjoy your service</div><div class="step-copy mm-font">Service အလိုက် စတင်အသုံးပြုနိုင်ပါပြီ။</div></div></div>
-    </section>
-
-    <div class="section-head"><div><div class="section-kicker">FAQ</div><h2 class="section-title">Need to know</h2></div></div>
-    <section class="faq">
-      <details class="glass"><summary>ဘယ်လို order တင်ရမလဲ?</summary><p class="mm-font">သင်လိုချင်တဲ့ product ရဲ့ “ဝယ်ယူရန်” ကိုနှိပ်ပြီး Messenger မှတစ်ဆင့် order ဆက်လုပ်နိုင်ပါတယ်။</p></details>
-      <details class="glass"><summary>ငွေပေးချေပြီးရင် ဘယ်လိုရမလဲ?</summary><p class="mm-font">Order အချက်အလက်အတည်ပြုပြီး service အလိုက် အသုံးပြုနိုင်မယ့်အချက်အလက်တွေကို ပေးပို့ပေးပါမယ်။</p></details>
-      <details class="glass"><summary>ပြဿနာဖြစ်ရင် ဘယ်ကိုဆက်သွယ်ရမလဲ?</summary><p class="mm-font">Messenger, Viber သို့မဟုတ် Telegram မှတစ်ဆင့် Support ကို တိုက်ရိုက်ဆက်သွယ်နိုင်ပါတယ်။</p></details>
-    </section>
-
-    <footer class="footer">Premium IT · Digital Service<br><span>© 2026 All Rights Reserved</span></footer>
-  </main>
-
-  <a class="float-chat" href="https://m.me/111917871817015" data-messenger-ref="" aria-label="Chat on Messenger">
-    <span>Chat with us</span>
-    <svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c-5.57 0-10 4.01-10 9.37 0 2.95 1.46 5.57 3.77 7.29V22l3.23-1.77c.91.25 1.87.38 3 .38 5.57 0 10-4.01 10-9.04C22 6.21 17.57 2.2 12 2.2Zm.93 12.13-2.61-2.79-5.1 2.79 5.59-5.93 2.61 2.8 5.07-2.8-5.56 5.93Z"/></svg>
-  </a>
-
-  <div id="scroll-cue" class="scroll-cue"><div><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="m7 10 5 5 5-5"/></svg></div></div>
-
+  </dialog>
   <script>
-    const cue=document.getElementById('scroll-cue');
-    const footer=document.querySelector('.footer');
-    if (cue && footer && 'IntersectionObserver' in window) {
-      const observer=new IntersectionObserver(([entry])=>{
-        cue.classList.toggle('hide',entry.isIntersecting);
-      },{rootMargin:'0px 0px 160px 0px',threshold:0});
-      observer.observe(footer);
-    } else if (cue) {
-      cue.classList.add('hide');
-    }
+    // To update a price or term, edit .price-value or .billing-period in its
+    // product card above. Order messages and print use those
+    // same values. No framework, external JavaScript, or server is required.
+    (() => {
+      'use strict';
+      const cards = Array.from(document.querySelectorAll('.product'));
+      const filters = Array.from(document.querySelectorAll('[data-filter]'));
+      const search = document.getElementById('service-search');
+      const count = document.getElementById('filter-count');
+      const empty = document.getElementById('empty-state');
+      const orderDialog = document.getElementById('order-dialog');
+      const orderMessage = document.getElementById('order-message');
+      let category = 'all';
+      let scrollPosition = 0;
+      let previousBodyStyle;
+      const supportsDialog = typeof orderDialog.showModal === 'function';
 
-    // Messenger: use the official m.me URL as the canonical fallback.
-    // On Android Chrome, try the Messenger app via an intent URL first.
-    // On iOS, try the app's custom URL scheme and fall back to m.me if it
-    // cannot be opened. Desktop and other devices use m.me directly.
-    const MESSENGER_ID = '111917871817015';
-
-    function openMessenger(ref = '') {
-      const fallback = `https://m.me/${MESSENGER_ID}${ref ? `?ref=${encodeURIComponent(ref)}` : ''}`;
-      const ua = navigator.userAgent || '';
-      const isAndroid = /Android/i.test(ua);
-      const isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-
-      if (isAndroid) {
-        // Chrome/Android understands intent:// and can fall back to the web URL.
-        const intentUrl = `intent://user/${MESSENGER_ID}/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.browser_fallback_url=${encodeURIComponent(fallback)};end`;
-        window.location.href = intentUrl;
-        return false;
+      function planFromCard(card) {
+        return {
+          name: card.querySelector('.product-name > span:last-child').textContent.trim(),
+          price: card.querySelector('.price-value').textContent.trim() + ' Ks',
+          period: card.querySelector('.billing-period').textContent.trim(),
+          href: card.querySelector('[data-order]').getAttribute('href')
+        };
       }
 
-      if (isIOS) {
-        let didLeavePage = false;
-        const markHidden = () => { didLeavePage = true; };
-        document.addEventListener('visibilitychange', markHidden, { once: true });
-
-        window.location.href = `fb-messenger://user-thread/${MESSENGER_ID}`;
-
-        window.setTimeout(() => {
-          document.removeEventListener('visibilitychange', markHidden);
-          if (!didLeavePage && document.visibilityState === 'visible') {
-            window.location.href = fallback;
-          }
-        }, 1200);
-        return false;
+      function filterCards() {
+        const query = search.value.trim().toLocaleLowerCase();
+        let visible = 0;
+        cards.forEach(card => {
+          const matchesCategory = category === 'all' || card.dataset.category === category;
+          const matchesSearch = card.textContent.toLocaleLowerCase().includes(query);
+          card.hidden = !(matchesCategory && matchesSearch);
+          if (!card.hidden) visible++;
+        });
+        count.textContent = visible + ' / ' + cards.length + ' services';
+        empty.hidden = visible !== 0;
+        document.getElementById('catalog-grid').hidden = visible === 0;
       }
 
-      window.location.href = fallback;
-      return false;
-    }
-
-    document.querySelectorAll('a[data-messenger-ref]').forEach(link => {
-      link.addEventListener('click', event => {
-        event.preventDefault();
-        openMessenger(link.dataset.messengerRef || '');
+      filters.forEach(button => button.addEventListener('click', () => {
+        category = button.dataset.filter;
+        filters.forEach(filter => filter.setAttribute('aria-pressed', String(filter === button)));
+        filterCards();
+      }));
+      search.addEventListener('input', filterCards);
+      document.getElementById('reset-filters').addEventListener('click', () => {
+        category = 'all';
+        search.value = '';
+        filters.forEach(filter => filter.setAttribute('aria-pressed', String(filter.dataset.filter === 'all')));
+        filterCards();
+        filters[0].focus();
       });
-    });
+      document.getElementById('catalog-toolbar').hidden = false;
+      count.hidden = false;
+      filterCards();
 
-    document.addEventListener('contextmenu',e=>e.preventDefault());
-    function ctrlShiftKey(e,key){return e.ctrlKey&&e.shiftKey&&e.key.toUpperCase()===key}
-    document.addEventListener('keydown',e=>{if(e.key==='F12'||ctrlShiftKey(e,'I')||ctrlShiftKey(e,'J')||ctrlShiftKey(e,'C')||(e.ctrlKey&&e.key.toUpperCase()==='U')) e.preventDefault();});
+      function openDialog(dialog) {
+        scrollPosition = window.scrollY;
+        previousBodyStyle = {
+          position: document.body.style.position,
+          top: document.body.style.top,
+          width: document.body.style.width,
+          overflow: document.body.style.overflow
+        };
+        dialog.showModal();
+        // Preserve the page position when a mobile dialog scrolls.
+        document.body.style.position = 'fixed';
+        document.body.style.top = '-' + scrollPosition + 'px';
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
+      }
+
+      orderDialog.querySelector('[data-close-dialog]').addEventListener('click', () => orderDialog.close());
+      orderDialog.addEventListener('click', event => {
+        const rect = orderDialog.getBoundingClientRect();
+        const outside = event.clientX < rect.left || event.clientX > rect.right ||
+          event.clientY < rect.top || event.clientY > rect.bottom;
+        if (event.target === orderDialog && outside) orderDialog.close();
+      });
+      orderDialog.addEventListener('close', () => {
+        if (!previousBodyStyle) return;
+        Object.assign(document.body.style, previousBodyStyle);
+        previousBodyStyle = undefined;
+        const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+        document.documentElement.style.scrollBehavior = 'auto';
+        window.scrollTo(0, scrollPosition);
+        document.documentElement.style.scrollBehavior = previousScrollBehavior;
+      });
+
+      // Keep ordinary m.me anchors as the fallback for browsers without dialog
+      // support or JavaScript. Modified clicks retain normal browser behavior.
+      if (supportsDialog) {
+        document.querySelectorAll('[data-order]').forEach(link => link.addEventListener('click', event => {
+          if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+          event.preventDefault();
+          const plan = planFromCard(link.closest('.product'));
+          document.getElementById('order-title').textContent = plan.name;
+          document.getElementById('order-price').textContent = plan.price;
+          document.getElementById('order-period').textContent = plan.period;
+          document.getElementById('messenger-order').href = plan.href;
+          orderMessage.value = 'မင်္ဂလာပါ Premium IT၊ ဒီ plan လေး ဝယ်ယူချင်ပါတယ်။\n\nService: ' +
+            plan.name + '\nPlan: ' + plan.period + '\nPrice: ' + plan.price;
+          const status = document.getElementById('order-copy-status');
+          status.hidden = true;
+          status.textContent = '';
+          openDialog(orderDialog);
+        }));
+      }
+
+      async function copyText(value) {
+        if (navigator.clipboard && window.isSecureContext) {
+          try { await navigator.clipboard.writeText(value); return true; }
+          catch (_) { /* Fall through to local-file-compatible copy. */ }
+        }
+        const field = document.createElement('textarea');
+        field.value = value;
+        field.setAttribute('readonly', '');
+        field.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;';
+        const active = document.activeElement;
+        const host = document.querySelector('dialog[open]') || document.body;
+        host.appendChild(field);
+        field.focus({ preventScroll: true });
+        field.select();
+        field.setSelectionRange(0, value.length);
+        let copied = false;
+        try { copied = document.execCommand('copy'); } catch (_) {}
+        field.remove();
+        if (active && active.focus) active.focus({ preventScroll: true });
+        return copied;
+      }
+
+      document.getElementById('copy-order').addEventListener('click', async () => {
+        const copied = await copyText(orderMessage.value);
+        const status = document.getElementById('order-copy-status');
+        status.textContent = copied ? 'Copy လုပ်ပြီးပါပြီ။ Chat ထဲမှာ paste လုပ်နိုင်ပါတယ်။' :
+          'စာကို ရွေးထားပါတယ်။ ဖုန်းမှာ Copy ကိုနှိပ်ပါ သို့မဟုတ် Ctrl+C / ⌘C ဖြင့် copy လုပ်ပါ။';
+        status.hidden = false;
+        if (!copied) {
+          orderMessage.focus();
+          orderMessage.select();
+          orderMessage.setSelectionRange(0, orderMessage.value.length);
+        }
+      });
+
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+      // The print stylesheet always shows every plan, even if a filter or an
+      // empty search hid it on screen. Printing does not change search state.
+    })();
   </script>
 </body>
 </html>
